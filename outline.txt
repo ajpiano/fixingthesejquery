@@ -1,0 +1,126 @@
+Fixing These jQuery: A Guide To Debugging jQuery Code/Apps etc.
+PS. Each "slide" might actually be more than one slide.
+
+Slide 1: Cover
+
+Slide 2: Who am I? (brief)
+
+Slide 3
+  [Petrifying alert() debugging example with mouse tracking]
+  alert() is not a debugging method.
+  jQuery is JavaScript
+  If you are trying to debug it without using a debugger, you are insane.
+  
+Slide 4
+  Choices:
+  Firebug - Firefox
+  Webkit Inspector - Safari/Wekbit, Chrom(e/ium)
+  IE > 8 - IE Script Debugger
+  Opera - Dragonfly
+  All IEs - Microsoft Whatever 2017
+    DebugBar?
+    (Yes, the IE choices suck, but you're only going to be using them when you're debugging IE, not all the time)
+
+Slide 5
+  ZOMG The debugger TELLS YOU WHEN THINGS ARE BROKEN
+  Use some sort of syntax verification in your editor / IDE
+
+Slide 6
+  Basics:
+  Launching Debugger
+  Setting a breakpoint
+  Using the debugger; statement
+
+Slide 7
+  The Console API
+
+Slide 8
+  The Watch/Locals window
+
+Slide 9
+  Why aren't my events happening?
+  Using .length to debug selections
+  this is not the this you think this is!
+
+Slide 10: Random caveats that are useful to know
+  stopPropgataion() ... it stops things from propagating. (Duh)
+  IE7 completely blows up if you have a trailing comma in an object literal
+
+Slide 11
+  Stack Trace FTW!
+
+Slide 12
+  Debugging AJAX
+  The First A in AJAX doesn't stand for AWESOME, it stands for ASYNCHRONOUS
+    (ajax101 diagram)
+  You can't do this:
+    var foo = $.get("foo.php",function(data) { return data });
+  Or this
+    var foo;
+    $.get("foo.php",function(data) {
+      foo = data;
+    });
+  Technically you can. but it won't work: RACE CONDITION
+  async:false - It's not as bad as killing a kitten...but it's like locking it in a dark room and not feeding it. If you can avoid it, do so.
+  Cross-domain AJAX - it's pretty much not allowed.  It can be done, but at it's simplest, $.get("http://www.google.com/search?q=foo") doesn't work.
+  
+Slide 12
+  Using the Net/Resources tab in Firebug/Webkit
+  Charles!
+  Fiddler
+
+Slide 13: Random Caveats That Are Useful to Know - AJAX Edition
+  IE Hates Injecting Invalid Markup
+  Getting scripts in remote content is messy, and it definitely isn't a callback.
+  Elements added to the page after .bind() is run will not have those event handlers bound to them. see ?faq events.
+  If you change the class of an element, it will not magically run events bound to that new class - unless you use delegation
+  Collections are not "live"
+  .add() does not augment the initial set, it returns a new one
+    var foo = $(); foo.add("#bar");  // foo.length === 0;
+    var foo = $(); foo = foo.add("#bar"); // foo.length === 1;
+
+Slide 14:
+    Stack trace or GTFO
+
+Slide 15: But what if the bug is in jQuery?
+  Just because you get an error that points to a line number in jQuery doesn't mean there's a "jQuery Bug"
+  You're probably passing something wrong to jQuery
+  How can you tell?  Use the same debugging techniques from before!
+  USE THE UNMINIFIED SOURCE
+
+Slide 16: But what if the bug REALLY is in jQuery?
+  Did your code work in an earlier version of jQuery, but you upgraded and now it broke?
+  It *might* be a bug, it might be a planned change.  Look through release notes, check if there is a bug for it in the bug tracker
+  If you *really* think it's a bug, file a ticket, read the bug reporting guidelines, check out Mike Taylor's presentation.  Thanks!
+
+Slide 17: MORE Random <del>Fun</del> Caveats
+  For loop scope (iterator value persists after loop) - Use a closure
+  Function hoisting!
+  Watch out for reserved words
+    var class = "FAIL";
+  You can't have more than 30 stylesheets in IE
+
+Slide 18: "Debugging" Perf
+  Hopefully peformance issues should not be literally slaying your application to the extent that you need to actively debug them in the first place...hopefully.
+  Avoid excessive element manipulation - make a big string and insert, template!
+  console.time/console.profile/custom benchmark function
+  jsperf.com
+
+Slide 19: Bonus! Debugging/hacking jQuery UI
+  Get the instance from .data("widgetname")
+  Inspect the 'ui' object 
+  Check for un(der)documented callbacks
+
+Slide 20: Alright, I give up.
+  Get a cup of coffee/wait until tomorrow. Resume debugging.
+
+  jQuery Docs
+  jQuery IRC support channel
+  jQuery Forum
+  Plugin Specific forums
+  Twitter.  Nope.
+
+  Get a new job.
+
+Slide 21: <3z
+

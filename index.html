@@ -1,0 +1,1759 @@
+
+<!DOCTYPE html> 
+<!--
+  jQuery's Best Friends
+  by Alex Sexton
+  WTFPL License
+ 
+  If you want the cool kid fonts for this preso:
+  http://new.myfonts.com/fonts/hiekkagraphics/sketchetik/
+  http://www.microsoft.com/downloads/en/details.aspx?familyid=22e69ae4-7e40-4807-8a86-b3d36fab68d3&displaylang=en
+ 
+  They aren't licensed for webfonting, so sry.
+ 
+  This all refers to the Presentation slides or whatever.
+  vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
+ 
+  Copyright 2010 Google Inc.
+ 
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+ 
+     http://www.apache.org/licenses/LICENSE-2.0
+ 
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+ 
+  Original slides: Marcin Wichary (mwichary@google.com)
+  Modifications: Ernest Delgado (ernestd@google.com)
+                 Alex Russell (slightlyoff@chromium.org)
+                 Brad Neuberg
+--> 
+<html> 
+  <head> 
+    <meta charset="utf-8" /> 
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge;chrome=1" /> 
+    <title>Fixing These jQuery | adam j. sontag  </title>
+    <link href="css/main.css" rel="stylesheet" type="text/css" /> 
+    <link href="http://fonts.googleapis.com/css?family=Droid+Sans|Droid+Sans+Mono" rel="stylesheet" type="text/css" /> 
+    <link href="css/syntax.css" rel="stylesheet" type="text/css" /> 
+  </head> 
+  <body> 
+    <div class="presentation"> 
+      <div id="presentation-counter"></div> 
+      <div class="slides"> 
+        <div class="slide"> 
+          <div class="cpbg"> 
+            <section class="middle landing"> 
+              <h1>Fixing These jQuery!</h1>
+              <h4>adam j. sontag</h4>
+            </section> 
+          </div> 
+        </div> 
+	
+	
+		
+	
+        <div class="slide"> 
+          <header> 
+            <h1>Who dat?</h1>
+          </header>
+          <section class="text">
+            <ul>
+              <li><a href="http://yayquery.com">yayQuery</a> Cohost!</li>
+              <li><a href="http://bocoup.com">Bocoup</a> Dev!</li>
+              <li>I've debugged a lot of my own jQuery problems</li>
+              <li>I've debugged a lot of other people's jQuery problems</li>
+              <li>I've seen <del>it all</del> a lot</li>
+            </ul>
+          </section>
+        </div> 
+	
+		
+	
+        <div class="slide"> 
+          <header>
+            <h1>jQuery is JavaScript</h1>
+          </header>
+          <section class="text">
+            <p>You <strong>will</strong> have to debug it.</p>
+	    <pre class="brush: js; toolbar: false"> 
+window.alert("Is Not A Debugger")</pre> 
+            <p>Why?</p>
+            <iframe src="dontdothis.html" style='width:100%;height800px;' height='300'>Check Out My Awesome, Hand-Rolled Tooltip!</iframe>
+	  </section> 
+        </div> 
+ 
+
+	<div class="slide"> 
+          <header> 
+            <h1>JavaScript Debuggers Exist</h1> 
+            <section> 
+              <p class="quoteThing">And if you aren't using them, you are insane.</p> 
+            </section> 
+          </header> 
+        </div> 
+
+	
+	<div class="slide" id='debugger-icons'> 
+          <header> 
+            <h1>Debuggers</h1> 
+          </header> 
+          <section class="text">
+            <figure>
+              <img src="images/firefox.png">
+              <img src="images/firebug.png">
+              <figcaption>
+                Firefox uses <a href="http://getfirebug.com">Firebug</a>
+              </figcaption>
+              <aside>
+                First, <a href="https://addons.mozilla.org/en-US/firefox/addon/1843/">install it</a><br/>
+                F12, or click the insect
+              </aside>
+            </figure>
+            <figure>
+              <img src="images/safari.png">
+              <img src="images/chrome.png">
+              <img src="images/webkit.png">
+              <figcaption>
+                Chrome and Safari use <a href="http://trac.webkit.org/wiki/WebInspector">Webkit Inspector</a>
+              </figcaption>
+              <aside>
+                Cmd-Opt-I / Ctrl-Shift-I
+              </aside>
+            </figure>
+            <figure>
+              <img src="images/opera.png">
+              <img src="images/dragonfly.png">
+              <figcaption>
+                Opera uses <a href="http://www.opera.com/dragonfly/">Dragonfly</a>
+              </figcaption>
+              <aside>
+                Cmd-Opt-I / Ctrl-Shift-I
+              </aside>
+            </figure>
+            <figure>
+              <img src="images/ie8-logo.png">
+              <img src="images/ie9-logo.png">
+              <figcaption>
+                IE8 and IE9 have a built-in debugger
+              </figcaption>
+              <aside>
+                F12
+              </aside>
+            </figure>
+            <figure>
+              <img src="images/ie6-logo.png">
+              <img src="images/visualstudio.png">
+              <figcaption>
+                IE6 and IE7 require you to use a host app to debug. Lame.
+              </figcaption>
+              <aside>
+                GLWTD
+              </aside>
+            </figure>
+
+          </section> 
+        </div> 
+
+
+
+	<div class="slide debugger-screenshots accordioned"> 
+          <header> 
+            <h1>All Look Same</h1>
+          </header> 
+          <section class="text">
+            <figure>
+              <img src="images/firebug_screenshot.png">
+              <figcaption>
+                Firebug
+              </figcaption>
+            </figure>
+            <figure>
+              <img src="images/webkit_inspector_screenshot.png">
+              <figcaption>
+                Webkit Inspector
+              </figcaption>
+            </figure>
+            <figure>
+              <img src="images/dragonfly_screenshot.png">
+              <figcaption>
+                Dragonfly
+              </figcaption>
+            </figure>
+            <figure>
+              <img src="images/ie_debugger.png">
+              <figcaption>
+                Internet Explorer 8
+              </figcaption>
+            </figure>
+          </section> 
+        </div> 
+	
+ 
+	<div class="slide debugger-screenshots"> 
+          <header> 
+            <h1>ZOMG!</h1>
+          </header> 
+          <section class="text">
+            <figure>
+              <img src="images/it_shows_errors.png" id="it_shows_errors">
+              <figcaption>
+                The Debugger SHOWS YOU THE ERRORS!!!
+              </figcaption>
+            </figure>
+            <ul>
+              <li>A debugger will show you syntax errors and runtime exceptions</li>
+              <li><strong>Save time: Use your IDE or text editor to catch syntax errors (JSLint)</strong></li>
+            </ul>
+          </section>
+        </div>
+
+	<div class="slide"> 
+          <header> 
+            <h1>Really Basic Errors</h1>
+            <h2>Let's get these out of the way</h2> 
+          </header>
+          <section class="text muchSmallerCode" style="margin-top:163px"> 
+            <dl>
+              <dt>jQuery is not defined</dt>
+              <dd>You have not loaded jQuery correctly</dd>
+              <dd>Is the script included?</dd>
+              <dd>Is the path correct?</dd>
+
+              <dt>$ is not defined</dt>
+              <dd>jQuery is loaded, but the $ alias is not assigned to it.</dd>
+              <dd>Was <code>jQuery.noConflict()</code> run? (Wordpress does this by default.)</dd>
+
+              <dt>$.fn is not defined</dt>
+              <dd>Are you using another library that is taking the $ alias?</dd>
+
+              <dt>jQuery.fn.somePlugin is not defined</dt>
+              <dd>You have not loaded the plugin correctly</dd>
+              <dd>Is the script included?</dd>
+              <dd>Is the path correct?</dd>
+              <dd>Did you load the plugin <em>after</em> loading jQuery?</dd>
+            </dl>
+          </section>
+        </div>
+
+
+        <div class="slide">
+          <header>
+            <h1>Debuggin' <del>ain't</del> is easy</h1>
+          </header>
+          <section class="text">
+            <p>Instead of this ugly, useless ugly alert...</p>
+            <pre class="brush: js; toolbar: false; highlight:[6]"> 
+$("ul li span").hover(function(e) {
+  var $t = $(this), 
+      w = $t.width(),
+      o = $t.offset();
+  o.left = o.left + w;
+  alert(o);
+  span.text($t.text())
+  tip.offset(o).show();
+});
+            </pre> 
+          </section>
+        </div>
+
+	<div class="slide debugger-screenshots"> 
+          <header> 
+            <h1>...Set a Breakpoint!</h1> 
+          </header> 
+          <section class="text"> 
+            <figure>
+              <img src="images/set_breakpoint.png">
+              <figcaption>
+                <ol>
+                  <li>Select the script you want to debug</li>
+                  <li>Click on the line number where you want to inspect further</li>
+                  <li>An arrow or dot thingy will show up.  That's a <a href="http://en.wikipedia.org/wiki/Breakpoint">breakpoint</a>!</li>
+                </ol>
+              </figcaption>
+            </figure>
+          </section>
+        </div>
+
+
+ 
+        <div class="slide">
+          <header>
+            <h1>The <code>debugger;</code> statement</h1>
+          </header>
+          <section class="text">
+            <p>Don't want to wait to set a breakpoint?</p>
+            <pre class="brush: js; toolbar: false; highlight:[6]"> 
+$("ul li span").hover(function(e) {
+  var $t = $(this), 
+      w = $t.width(),
+      o = $t.offset();
+  o.left = o.left + w;
+  debugger;
+  span.text($t.text())
+  tip.offset(o).show();
+});
+            </pre> 
+            <p>The <code>debugger;</code> statement lets you set a breakpoint programatically.
+          </section>
+        </div>
+ 
+ 
+	<div class="slide debugger-screenshots"> 
+          <header>
+            <h1>In either case</h1>
+          </header>
+          <section class="text"> 
+            <figure>
+              <img src="images/reach_breakpoint.png">
+              <figcaption>
+                When the breakpoint is reached, the code will stop executing and the debugger will light up like a Christmas tree.
+              </figcaption>
+            </figure>
+            <p>And just like a Christmas tree, you can find all sorts of awesome stuff underneath it.</p>
+	  </section> 
+        </div> 
+ 
+ 
+ 
+	<div class="slide"> 
+          <header>
+            <h1>Watch out! We're going ¡<em>Local</em>!</h1> 
+            <h2>The Watch/Locals windows</h2>
+          </header>
+          <section class="text" style="margin-top:163px"> 
+            <figure>
+              <img src="images/wi_locals.png" style="width:40%;">
+              <img src="images/fb_watch.png" style="width:40%;">
+              <figcaption>
+                Chrome/Safari's Scope Variables; Firebug's Watch window 
+              </figcaption>
+            </figure>
+            <ul>
+              <li>Determine the current value of variables.</li>
+              <li>Drilldown through objects - no more [Object object]!</li>
+              <li><strong>Watch:</strong> Keep track of arbitrary expressions</li>
+            </ul>
+	  </section> 
+        </div> 
+ 
+ 
+        <div class="slide"> 
+          <header> 
+            <h1>R U Steppin To Me Bro?</h1> 
+          </header> 
+          <section class="text"> 
+            <figure>
+              <img src="images/wi_controls.png" style="width:50%;display:block;margin:1em auto 0;">
+              <figcaption>
+                Continue - Step Over - Step Into - Step Out
+              </figcaption>
+            </figure>
+            <p>When execution is paused in a debugger, you can control it - just like a VCR!</p>
+            <dl>
+              <dt>Continue</dt>
+              <dd>Resume execution. Go to the next breakpoint, if it exists.</dd>
+
+              <dt>Step Over</dt>
+              <dd>Call the next function, pause again after it finishes. (Go to the next line of code.)</dd>
+
+              <dt>Step Into</dt>
+              <dd>Calls the next function on the line, pausing execution on its first line.</dd> 
+
+              <dt>Step Into</dt>
+              <dd>Finish the current function call, pause on the line that invoked it.</dd> 
+            </dl>
+	  </section> 
+        </div> 
+ 
+ 
+        <div class="slide"> 
+          <header> 
+            <h1><code>console.log</code> & friends</h1> 
+            <h2>Pullin' out all the stops!</h2> 
+          </header> 
+	  <section class="smallerCode text" style="margin-top:163px;"> 
+            <ul>
+              <li>Breakpoints are great, but are similar to alerts. How?</li>
+              <li>Wait for something to happen, and pause when it does</li>
+              <li>The Console and its API let you debug arbitrary code and values</li>
+            </ul>
+            <pre class="brush: js; toolbar: false"> 
+$('#testElement')
+.click({"foo":"bar"},function(e) {
+  console.info("The button has been pressed");
+  console.log(this,e);
+  console.dir(e.data);
+  $(this).append('<div>Hello</div>');
+}); </pre> 
+          </section> 
+        </div> 
+ 
+        <div class="slide"> 
+          <header class="punny-picture"> 
+            <h1>Console loggin'</h1>
+            <a href="http://www.flickr.com/photos/69393358@N00/1260688402/">
+              <img src="images/console_loggin.jpg">
+            </a>
+          </header> 
+	  <section class="text" style="margin-top:133px;"> 
+            <figure>
+              <img src="images/console_demo.png">
+              <figcaption>
+                Something like you'll see in your console when you click the element. (Firebug)
+              </figcaption>
+            </figure>
+            <figure>
+              <iframe style="width: 90%; height: 200px; margin:0 auto; display:block;" src="http://jsfiddle.net/ajpiano/VDVzQ/embedded/"></iframe>
+              <figcaption>
+                The previous example, in action on <a href="http://jsfiddle.net/ajpiano/VDVzQ/">jsFiddle</a> (more on that later).
+              </figcaption>
+            </figure>
+	  </section> 
+        </div> 
+ 
+        <div class="slide"> 
+          <header> 
+            <h1>The <em>Consolation</em> Prize</h1>
+          </header> 
+	  <section class="smallerCode text"> 
+          <p>You don't have to modify your code at all to debug using the Console</p> 
+          <figure>
+            <img src="images/consolation_prize.png" style="width:100%">
+            <figcaption>
+              <ul>
+                <li>You can execute any arbitrary code just by entering it into the console.</li>
+                <li><em>Code is executed in the context of the <code>window</code> object</em> (<code>this === window</code>)</li> 
+                <li><em>Unless the debugger is paused, in which case code is executed in the context of the paused function</em></li>
+                <li><strong>Embiggen your console (if possible)</strong></li>
+              </ul>
+            </figcaption>
+          </figure>
+        </div> 
+
+
+        <div class="slide"> 
+          <header> 
+            <h1>A Whole Lotta API</h1> 
+          </header> 
+	  <section class="text"> 
+            <figure class="floaty-figure">
+              <img src="images/console_api.png">
+              <figcaption>
+                Shamelessly capped from <a href="http://getfirebug.com/wiki/index.php/Console_API">Firebug Wiki</a>
+              </figcaption>
+            </figure>
+            <ul>
+              <li>There are a lot of methods in the <a href="http://getfirebug.com/wiki/index.php/Console_API">Console API</a></li>
+              <li>To get started, we only really need <code>log</code>, <code>debug</code>, and <code>dir</code></li>
+              <li>Unfortunately, most of these suck in IE</li>
+              <li>Our arsenal is almost complete!</li>
+            </ul>
+	  </section> 
+        </div> 
+ 
+ 
+        <div class="slide"> 
+          <header> 
+            <h1>He's On Fire!</h1> 
+          </header> 
+          <section class="text"> 
+            The <a href="http://firequery.binaryage.com/">FireQuery</a> add-on for Firebug makes debugging jQuery <strong>even easier</strong>
+            <figure>
+              <img src="images/firequery_html.png" style="width:40%;">
+              <img src="images/firequery_console.png" style="width:40%;">
+              <figcaption>
+                <ol>
+                <li>FireQuery showing jQuery.data() properties in HTML View</li>
+                <li>Pretty-printing jQuery objects in console</li>
+                </ol>
+              </figcaption>
+            </figure>
+            <ul>
+              <li>Inject jQuery into any page</li>
+              <li>Run <a href="http://github.com/jamespadolsey/jQuery-Lint">jQuery Lint</a></li>
+              <li>If you like this, you might also like <a href="http://firerainbow.binaryage.com/">FireRainbow</a></li>
+            </ul>
+	  </section> 
+        </div> 
+ 
+ 
+        <div class="slide"> 
+          <header> 
+            <h1>Answer Your Own FAQs</h1> 
+            <h2>AKA: "Why isn't it working?"</h2>
+          </header> 
+          <section style="margin-top:163px;" class="smallerCode text"> 
+            <dl>
+              <dt><strong>Q: </strong>Why aren't my events happening?</dt>
+              <dd>Do the elements you're attaching them to even exist? Type this in the console, and run it.</dd>
+              <dd>
+              <pre class="brush: js; toolbar: false"> 
+// Replace ".theElements" with your actual selector
+console.log($(".theElements").length);
+</pre> 
+              </dd>
+              <dd>If the result is <code>0</code>, <strong>the elements are not in the DOM</strong></dd>
+              <dd> Checking the <code>length</code> property of jQuery object is the <strong>easiest & fastest</strong> way to check
+              if a selector matched any elements. <em>Don't use <code>.size()</code>, it's a waste of time.</em></dd>
+              <dd><strong>A: </strong>A selector you are using is not correct.</dd>
+              <dd><strong>A: </strong>A traversal failed to match any elements.</dd>
+
+              <dt><strong>Q: </strong>But the result was <code>&gt; 0</code>!</dt>
+              <dd><strong>A: </strong>Then we forge on!</dd>
+            </dl>
+	  </section> 
+        </div>
+        
+        <div class="slide"> 
+          <header> 
+            <h1>"The selection contains elements!"</h1> 
+          </header> 
+          <section class="smallerCode text"> 
+            <p>By and large, jQuery works with elements that are in the DOM.</p>
+            <dl style="line-height:24px">
+              <dt><strong>Q: </strong>Were the the elements there when the code was actually run?</dt>
+              <dd>Just because the elements are in the DOM now, doesn't mean they were when the code executed.</dd>
+              <dt><strong>A1: </strong><code>jQuery(document).ready(function($){});</code></dt>
+              <dd>Make sure your code was inside of a document-ready block, or otherwise executed after the DOM has loaded.</dd>
+              <dd>This is just one reason to <a href="http://developer.yahoo.com/blogs/ydn/posts/2007/07/high_performanc_5/">put your scripts at the bottom of the <code>body</code></a>.</dd>
+              <dt><strong>A2: </strong> Debug!</dt>
+              <dd>Set a breakpoint at the line of code that is misbehaving. When the code pauses, <code>console.log($("yourSelector").length)</code></dd>
+              <dd>Add <code>$("yourSelector").length</code> as a Watch Expression, wait for the breakpoint.</dd>
+              <dd>Place <code>console.log($("yourSelector").length)</code> in your script, right before the code executes.</dd>
+            </dl>
+	  </section> 
+        </div>
+        
+        <div class="slide"> 
+          <header> 
+            <h1>Log Freely!</h1> 
+            <section> 
+              <p class="quoteThing">
+              Don't just log <code>.length</code>!<br/>
+              You can log any type of variable.<br/>
+              <span style="display:block;font-size:75%;line-height:44px;">
+              If you log the entire jQuery object,
+              you can hover over the elements, if any, to see them highlighted in the page!*
+              </span>
+              </p> 
+              <p>* IE doesn't support any of this awesome stuff.<br/>In fact, you can't interact with the page at all when you've paused execution in IE.</p>
+            </section> 
+          </header> 
+        </div> 
+ 
+ 
+        <div class="slide"> 
+          <header> 
+            <h1 style="font-size:67%">I Added The Elements to Page After I Tried To Actually Use Them</h1> 
+          </header> 
+          <section class="text smallerCode"> 
+            <ul>
+              <li>One of the most <a href="http://docs.jquery.com/FAQ#Why_do_my_events_stop_working_after_an_AJAX_request.3F">FA of all Q's</a></li>
+              <li>Could be as simple as <code>.html()</code> or the result of inserting AJAX-fetched content.</li>
+              <li>
+              <pre class="brush: js; toolbar: false"> 
+  var foo = $("div.foo").click(function() {
+    $(this).text("I was clicked!");
+  });
+  // foo.length == 1;
+
+  // nothing will happen when these divs are clicked.
+  $("&lt;div&gt;",{"class","foo"}).appendTo(document.body);
+  $("div.bar").addClass("foo");
+  </pre> 
+              </li>
+              <li>Handlers bound with <code>.bind()</code> (and shortcuts) are only <strong>attached</strong> to elements that
+              are in the jQuery object when <code>.bind()</code> is executed.</li>
+            </ul>
+	  </section> 
+        </div> 
+
+        <div class="slide"> 
+          <header> 
+            <h1>Hence, <code>.live()</code> and <code>.delegate</code></h1> 
+          </header> 
+          <section class="text muchSmallerCode"> 
+          <ul>
+            <li><strong>Event delegation</strong> uses <a href="http://www.quirksmode.org/js/events_order.html">event bubbling</a> to catch events at a higher level in the DOM than
+            where they occurred.</li>
+            <li>Now, you can catch events that happen on newly added elements</li>
+          </ul>
+          <pre class="brush: js; toolbar: false"> 
+// All three examples will catch a click on any anchor that is ever in the page
+$(document).bind("click",function(e) {
+  if ($(e.target).is("a") {
+    // this === document
+  }
+});
+
+$(document).delegate("a","click",function(e) {
+  //this === clicked anchor
+});
+
+$("a").live("click",function(e) {
+  //this === clicked anchor
+});
+</pre> 
+	  </section> 
+        </div> 
+
+
+
+        <div class="slide">
+          <header>
+            <h1><code>bind()</code> is not <code>live()</code></h1>
+          </header>
+          <section class="text muchSmallerCode">
+            <p>They do similar things.  How are they different?</p>
+            <pre class="brush: html; toolbar: false;">
+&lt;div id=&quot;teddy&quot; class=&quot;foo&quot;&gt;
+&lt;div id=&quot;roosevelt&quot; class=&quot;bar&quot;&gt;
+</pre> 
+            <pre class="brush: js; toolbar: false;">
+var log = function() { console.log(this.id); }
+$(".foo").click(log);
+$(".bar").live("click",log);
+
+$(".foo").addClass("bar").removeClass("foo").trigger("click"); 
+// logs 'teddy' twice
+// 1) Because there is still a click handler attached to &lt;div id='teddy'&gt;&lt;/div&gt;
+//    even though it no longer has the class 'foo'
+// 2) Because a "click" on an element with class "bar" bubbled to the document
+</pre> 
+            <ul>
+              <li><code>.bind()</code> creates a 1:1 association between element and handler</li>
+              <li><code>.live()</code> and <code>.delegate()</code> check to see if the target element of a bubbled event matches certain criteria</li>
+            </ul>
+          </section>
+        </div>
+ 
+        <div class="slide">
+          <header>
+            <h1>jQuery Objects are <em>not</em> live</code></h1>
+          </header>
+          <section class="text smallerCode">
+            <p>New elements that match a selector do not automagically appear in existing collections</p>
+            <pre class="brush: html; toolbar: false;">
+<ul id="wheatBeers" class="delicious">
+  <li>Abita Purple Haze</li>
+  <li>Hoegaarden</li>
+  <li>UFO Hefeweizen</li>
+</ul>
+</pre> 
+              <pre class="brush: js; toolbar: false;">
+var li = $("#wheatBeers li");
+// li.length == 3;
+$("&lt;li&gt;",{text:"Weihanstephaner"})
+.appendTo("#wheatBeers");
+// guess what? li.length == 3
+</pre> 
+          </section>
+        </div>
+
+        <div class="slide">
+          <header>
+            <h1>jQuery objects are <a href="http://www.dictionary.net/transient">transient</a></h1>
+          </header>
+          <section class="text muchSmallerCode">
+            <ul style="line-height:18px;font-size:80%">
+              <li>Every call to any jQuery.fn method returns a <strong>new</strong> jQuery object</li>
+              <li>That's why you <strong>can't compare jQuery objects for equality</strong></li>
+              <li>
+                <pre class="brush: js; toolbar: false;">
+$("#foo") === $("#foo"); // false
+$("#foo")[0] === $("#foo")[0] // true
+</pre> 
+              </li>
+              <li><strong>DON'T</strong> store arbitrary data on random jQuery objects! <em>Hint: Use .data()</em></li>
+              <li>
+                <pre class="brush: js; toolbar: false;">
+var $myCoolWidget = $("#cycleMcParallax");
+$myCoolWidget.cycleCount = 0;
+</pre> 
+              </li>
+              <li><strong>Beware</strong> of <code>add()</code></li>
+              <li>
+                <pre class="brush: js; toolbar: false;">
+var red = $(".red"), green = $(".green"); 
+// red.length == 5; green.length == 5;
+green.add(red);
+// green.length == 5;
+green = green.add(red);
+// green.length == 10;
+
+
+</pre> 
+              </li>
+            </ul>
+          </section>
+        </div>
+
+
+        <div class="slide"> 
+          <header> 
+            <h1>What the hell is <code>this</code>?</h1> 
+          </header> 
+          <section class="text smallerCode"> 
+            <ul style="line-height:22px">
+              <li>You pass a lot of functions to various jQuery methods</li>
+              <li>Event Handlers, AJAX callbacks, Utility methods, Plugin callbacks</li>
+              <li>jQuery and plugins <strong>will</strong> change the 'this' (the scope) of these functions</li>
+              <li><em>Just being aware of this fact is half the battle</em></li>
+            </ul>
+            <figure>
+            <pre class="brush: js; toolbar: false">
+$("#foo").click(function(e) {
+  $.getJSON("/ajax/page/",function(data) {
+    $(this).text(data.status); // IT'S NOT WORK
+  });
+});
+</pre>
+              <figcaption>
+                This <code>this</code> example gives new jQuery users fits.
+              </figcaption>
+            </figure>
+            <ul style="line-height:22px">
+              <li><strong>Be <em>very</em> aware of this when writing object-oriented code</strong></li>
+            </ul>
+	  </section> 
+        </div> 
+ 
+ 
+	<div class="slide"> 
+          <header> 
+            <h1><code>this</code> is out of control!</h1> 
+          </header>
+          <section class="text muchSmallerCode"> 
+            <dl>
+              <dt>Event handlers, <code>jQuery.fn.each</code>, jQuery UI</dt>
+              <dd>Explicitly set <code>this</code> to be a DOM element</dd>
+
+              <dt>AJAX callbacks</dt>
+              <dd>Explicitly set <code>this</code> to be an <code>XMLHttpRequest</code> object</dd>
+
+              <dt><code>jQuery.each</code></dt>
+              <dd>Explicitly sets <code>this</code> to be the value being iterated, but weird.</dd>
+            </dl>
+            <figure>
+              <pre class="brush: js; toolbar: false">
+$.each(["foo","bar"],function(i,value) {
+  // this == ["f","o","o"]
+  // value == "foo"
+});
+</pre>
+            <figcaption>
+              <em>jQuery.each: Don't use <code>this</code> here, use the second argument</em>
+            </figcaption>
+          </figure>
+          <dl>
+            <dt>Random Plugins With Callbacks</dt>
+            <dd>Might set <code>this</code>, might not.  Be on the lookout.</dd>
+          </dl>
+          </section> 
+        </div> 
+
+
+	<div class="slide"> 
+          <header> 
+            <h1>Don't drop the scope</h1> 
+          </header> 
+            <section class="text"> 
+            <p>
+              If <strong><code>this</code> isn't the <code>this</code> you think <code>this</code> is</strong>, 
+              you can use the debugger and/or the console to confirm your suspicion.
+            </p>
+            <figure>
+              <img src="images/what_is_this.png" style="width:100%">
+              <figcaption>
+                Hmm, <code>this</code> doesn't look like a DOM element from here!
+              </figcaption>
+            </figure>
+          </section>
+        </div>
+
+	<div class="slide"> 
+          <header> 
+            <h1>Let's get <code>this</code> straight</h1> 
+          </header> 
+          <section class="text muchSmallerCode"> 
+            <dl>
+              <dt>Use a variable to alias <code>this</code></dd>
+              <dd>
+                <pre class="brush: js; toolbar: false; highlight:[2,4]">
+$("#foo").click(function(e) {
+  var elem = this;
+  $.getJSON("/ajax/page/",function(data) {
+    $(elem).text(data.status); // ITS WORK NOW!
+  });
+});
+</pre>
+              </dd>
+              <dt><code><a href="http://api.jquery.com/jQuery.proxy">jQuery.proxy</a></code></dt>
+              <dd>Returns a reference to a function that will run with a particular context</dd>
+              <dd>
+                <pre class="brush: js; toolbar: false; highlight:[4,8]">
+var person = {
+  name:"Ace S. McCloud",
+  init:function() {
+    $("#sayHi").click($.proxy(function(e) {
+       // Now 'this' refers to the person object!
+       // We can still use e.target to reference the element
+       $(e.target).text(this.name);
+    },this));
+  }
+};
+</pre>
+              </dd>
+            </dl>
+          </section>
+        </div>
+
+        <div class="slide"> 
+          <header> 
+            <h1><code>this</code> shall not pass!</h1> 
+            <h2><em>Referencing</em> a function vs. <em>executing</em> a function</h2>
+          </header> 
+          <section class="text muchMuchSmallerCode" style="margin-top:173px"> 
+            <pre class="brush: js; toolbar: false;">
+// A simple function
+function log(str) {
+  console.log(str);
+};
+
+// Logs an event object, because jQuery always passes the event object as the first argument to handlers
+$("#foo").click(log);
+</pre>
+            <p>You <strong>cannot</strong> override supplied function arguments by "passing arguments" to a named function: 
+            <em>You'll end up executing the function!</em></p>
+            <pre class="brush: js; toolbar: false;">
+// WRONG 
+$("#foo").click(log("I clicked it"));
+// You just executed 'log', and failed to pass a function as a handler. Huh?
+// It's the same as doing the following, and just as broken.
+var l = log("I clicked it"); // l === undefined
+$("#foo").click(l);
+
+// RIGHT 
+$("#foo").click(function(e) {
+  log("I clicked it");
+});
+</pre>
+          </section>
+        </div>
+
+
+        <div class="slide random-caveats"> 
+          <header> 
+            <h1>RANDOM CAVEATS</h1> 
+            <section> 
+              <p class="quoteThing">
+              Non-AJAX Edition*
+              </p> 
+              <p>* Guess what's coming up next!</p>
+            </section> 
+          </header> 
+        </div> 
+
+	<div class="slide random-caveats"> 
+          <header> 
+            <h1>IE will straight up kill you if...</h1> 
+          </header> 
+          <section class="text muchSmallerCode"> 
+            <ul style="line-height:24px;">
+              <li>You leave a trailing comma in an object literal</li>
+              <li>
+                <pre class="brush: js; toolbar: false;">
+var get = {
+  ready: "for",
+  your: "funeral",
+}; // BOOM
+</pre> 
+              </li>
+              <li>You use <a href="https://developer.mozilla.org/en/JavaScript/Reference/Reserved_Words">reserved words you didn't know were reserved</a></li>
+              <li>
+                <pre class="brush: js; toolbar: false;">
+var class = "boom"; // BOOM
+var foo = {class: "bar"}; // BOOM
+var foo = {"class": "bar"}; // Actually OK. Quoted keynames ftw!
+</pre> 
+              </li>
+              <li>You try to inject malformed HTML</li>
+              <li>
+                <pre class="brush: js; toolbar: false;">
+$("#pick-a-nick-basket")
+.append(&quot;&lt;div class='food'&gt;&lt;h1&gt;Roast Beef&lt;/a&gt;&lt;/div&gt;&lt;a href='http://www.roastbeef.info'&gt;&lt;/h1&gt;&quot;); //sputter
+</pre> 
+              </li>
+            </ul>
+          </section>
+        </div>
+
+
+<div class="slide random-caveats"> 
+          <header> 
+            <h1>event.stopPropagation()</h1> 
+            <h2><em>"It stops events from propagating!"</em></h2>
+          </header> 
+          <section class="text muchSmallerCode" style="margin-top:163px;line-height:20px;"> 
+            <ul>
+              <li>Sometimes, you attach a handler to an element, and it works great.</li>
+              <li>
+                <pre class="brush: js; toolbar: false;">
+$("form").focus(function(e) {
+ $(e.target).addClass("active").siblings(":input").removeClass("active");
+});
+</pre> 
+              </li>
+              <li>Then you add some cool plugin, and the first handler. Stops. Happening.</li>
+              <li>
+                <pre class="brush: js; toolbar: false;">
+// jQuery.fn.electricPiano is a fictional plugin that
+// turns an input into a keyboard that plays synthesized sounds.
+$("input.musical").electricPiano();
+</pre>      
+              </li>
+              <li>That fancy plugin (or your own code) may be stopping the event's bubbling.</li>
+              <li>Check to see if there are other handlers which call <code>event.stopPropagation()</code> or <code>return false;</code></li>
+            </ul>
+          </section>
+        </div>
+
+        <div class="slide"> 
+          <header> 
+            <h1>Debugging AJAX</h1> 
+            </header>
+          <section class="text">
+            <figure>
+              <img src="images/ajax_injury.jpg">
+              <figcaption>
+                  <a href="http://www.flickr.com/photos/ugocei/103381013/sizes/z/in/photostream/">http://www.flickr.com/photos/ugocei/103381013/sizes/z/in/photostream/</a>
+              </figcaption>
+            </figure>
+          </section>
+        </div>
+
+        <div class="slide"> 
+          <header> 
+            <h1>Question #1</h1> 
+            <section>
+              <p class="quoteThing">
+                Was there an actual request?
+            </section>
+          </header> 
+        </div>
+
+        <div class="slide debugger-screenshots"> 
+          <header> 
+            <h1>The Network/Resources Tab</h1> 
+          </header>
+          <section class="text">
+            <p>Investigate the existence and results of AJAX calls</p>
+            <figure>
+              <img src="images/firebug_ajax_console.png">
+              <img src="images/firebug_net_xhr.png" style="margin-top:10px;">
+              <figcaption>
+                Firebug shows XHR activity in the Console and the Net tabs.
+              </figcaption>
+            </figure>
+            <figure>
+              <img src="images/chrome_net_xhr.png">
+              <figcaption>
+                Newest versions of Webkit Inspector use the Network tab.<br/>
+                Current releases use the Resources tab
+              </figcaption>
+            </figure>
+          </section>
+        </div>
+
+
+        <div class="slide debugger-screenshots"> 
+          <header> 
+            <h1 style="font-size:80%">Did the request even happen? IE edition</h1> 
+          </header>
+          <section class="text">
+            <p>IE's debugging tools do not allow you to interrogate XHRs<br/>
+            You have to use a third-party HTTP Proxy tool like 
+              <a href="http://www.charlesproxy.com/">Charles</a> or <a href="http://www.fiddler2.com/fiddler2/version.asp">Fiddler</a>
+            </p>
+            <figure>
+              <img src="images/ie_charles.png" style="width:75%;margin:0 auto">
+              <figcaption>
+                Charles, shown here, pairs with IE (and other browsers) to allow you to explore XHR calls,
+                similar to the Net tab in other debuggers
+              </figcaption>
+            </figure>
+          </section>
+        </div>
+
+        <div class="slide"> 
+          <header> 
+            <h1>If You Don't See an XHR</h1> 
+          </header>
+          <section class="text muchSmallerCode">
+            <dl>
+              <dt>Likely Explanation</dt>
+              <dd>The request was never made.  Something else in your code broke/misbehaved before the AJAX call was even fired.</dd>
+              <dd><strong>Protip: </strong> Add a <code>beforeSend</code> callback to check if the <code>$.ajax()</code> function is being reached.</dd>
+              <dd>
+                <pre class="brush: js; toolbar: false; highlight:[5,6,7]">
+$.ajax({
+  url:"foo.php",
+  data:{hello:"there"},
+  success:function(data) {},
+  beforeSend:function(xhr) {
+    console.debug("The XHR object has been prepared ",xhr);
+  }
+});
+</pre>      
+              </dd>
+
+              <dt>Considerably Less Likely Explanation</dt>
+              <dd>The request does not use an <code>XMLHttpRequest</code>, and is not logged by these tools.</dd>
+              <dd>Certain AJAX-y interactions don't actually use an XHR to communicate.
+                <ul>
+                  <li><strong>JSONP: </strong> Creates a new <code>script</code> node and appends it to the <code>head</code>.</li>
+                  <li><strong>'AJAX' Upload: </strong>Uses an <code>iframe</code> or Flash as a proxy to do the upload.</li>
+                </ul>
+              </dd>
+            </dl>
+          </section>
+        </div>
+
+        <div class="slide"> 
+          <header> 
+            <h1>Haven't Had Much <code>success</code></h1> 
+          </header>
+          <section class="text muchSmallerCode">
+            <p>If you are able to confirm that an XHR has indeed taken place, but your success callback isn't firing:</p>
+            <dl>
+              <dt><strong>A1: </strong>Server Error</dt>
+              <dd>The resource you are requesting is returning some sort of error.  Use the Network tab of your
+              debugger to see the StatusCode and physical response from the server.</dd>
+
+              <dt><strong>A2: </strong>Invalid JSON</dt>
+              <dd>If you are using <code>jQuery.getJSON</code> or otherwise specifying a <code>dataType</code> 
+              of JSON, jQuery will not fire the success callback if it cannot parse the response as <em>valid</em> JSON.</dd>
+              <dd><a href="http://simonwillison.net/2006/Oct/11/json/">Valid JSON</a> has <strong>double quotes</strong> around all strings, including keys, and is typically generated by a JSON encoder.</dd>
+
+              <dt><strong>A3: </strong>Malformed HTML</dt>
+              <dd>If you are using <code>jQuery.fn.load</code> or otherwise appending HTML that you fetched via AJAX,
+              make sure the HTML is structurally valid and does not contain errors.</dd>
+            </dl>
+          </section>
+        </div>
+
+        <div class="slide"> 
+          <header> 
+          <h1>Not <code>this</code> again!</h1> 
+          </header>
+          <section class="text muchMuchSmallerCode">
+            <p style="margin:.3em 0;">If your success callback is firing, but not working right</p>
+            <dl style="margin:0;">
+              <dt><strong>A1: </strong>Verify the scope</dt>
+              <dd>Remember, jQuery manipulates the scope of AJAX callbacks.</dd>
+              <dd>In addition to the <a href="#slide31">earlier techniques</a>, <code>jQuery.ajax()</code> has a <code>context</code> option
+              that sets the scope for all callbacks associated with that call.  </dd>
+              <dd style="font-size:80%;">
+                <pre class="brush: js; toolbar: false; highlight:[7,16]">
+var widget = {
+  elem:$("#scores"),
+  init:function() {
+    this.ajaxOptions = {
+      // The 'widget' object is 'this' when .init() runs,
+      // Preserve it as the context for all callbacks
+      context:this,
+      url:"scores.php"
+    };
+    return this;
+  },
+  getData(function() {
+    $.ajax($.extend({
+      success:function(data) {
+        // I can safely use 'this' to refer to the 'widget' object here
+        this.elem.html(data);
+      }
+    },this.ajaxOptions));
+  }
+};
+
+widget.init().getData();
+</pre>      
+              </dd>
+            </dl>
+          </section>
+        </div>
+
+        <div class="slide debugger-screenshots"> 
+          <header> 
+          <h1>The A in AJAX</h1> 
+          <h2 style="font-size:65%">Doesn't stand for "Awesome", it stands for "Asynchronous"</h2>
+          </header>
+          <section class="text" style="margin-top:163px">
+            <figure>
+              <img src="images/ajax101.png" style="width:65%;margin:0 auto;"> 
+              <figcaption>
+                Beware of <a href="http://en.wikipedia.org/wiki/Race_condition">Race Conditions</a>
+              </figcaption>
+            </figure>
+          </section>
+        </div>
+
+        <div class="slide">
+          <header>
+            <h1>It's A Race! It's A Race!</h1> 
+          </header>
+          <section class="text muchSmallerCode">
+          <p>You cannot reliably return the result of an AJAX callback back into the function that triggered it</p>
+            <figure>
+              <pre class="brush: js; toolbar: false; highlight:[7,16]">
+// newcontent === XMLHttpRequest 
+// NOT the raw server response 
+var newContent = $.get("remote.php",function(data) {
+  return data;
+}); </pre>
+              <figcaption>
+                <code>data</code> is returned from the anonymous function, but not into <code>newContent</code>
+              </figcaption>
+            </figure>
+            <figure>
+              <pre class="brush: js; toolbar: false; highlight:[7,16]">
+var newContent;
+$.get("remote.php",function(data) {
+  newContent = data;
+}); 
+$("#container").html(newContent); // Nothing is appended
+</pre>
+              <figcaption>
+                <strong>Race Condition:</strong> <code>newContent</code> will contain the server response at some point in the future, but not immediately after <code>$.get()</code> runs.<br/>
+              </figcaption>
+            </figure>
+          </section>
+        </div>
+
+        <div class="slide">
+          <header>
+            <h1><code>"Two Wrongs" != "A Right"</code></h1> 
+          </header>
+          <section class="text muchSmallerCode">
+          <p>You <strong>cannot</strong> combine the previous two non-working techniques to create something that works</p>
+          <p><em>Don't feel bad, everybody tries this once</em></p>
+            <figure>
+              <pre class="brush: js; toolbar: false; ">
+function getContent() {
+  var stuff;
+  $.get("remote.php",function(data) {
+    stuff = data;
+  }); 
+  return stuff;
+}
+var newContent = getContent(); // newContent === undefined
+</pre>
+              <figcaption>
+              This is a very bad idea. Just like <code>$.get()</code> does not wait for the callback to finish,
+              neither will the containing <code>getContent</code> function
+              </figcaption>
+            </figure>
+          </section>
+        </div>
+
+        <div class="slide"> 
+          <header> 
+          <h1>Whither <code>async:false</code>?</h1> 
+            <section> 
+            <p class="quoteThing">
+              It's not like <em>killing</em> a kitten, but it <em>is</em> like locking one in a dark room and choosing not to feed it.
+            </p> 
+            </section> 
+          </header> 
+        </div>
+
+        <div class="slide"> 
+          <header> 
+          <h1>Random SO Quote</h1> 
+            <section> 
+            <p class="quoteThing" style="font-size:36px !important;line-height:48px">
+            "It is much better to use callbacks and start thinking asynchronously, rather than procedurally. It's a bit of a struggle when you first start (since your code isn't necessarily run in line-by-line order), but it is very powerful and flexible once you get the hang of it."<br/>
+            <a href="http://stackoverflow.com/questions/1708389/ajax-call-inside-a-each-loop-not-being-asynchronous/1708463#1708463">nickf, 10 Nov 2009</a>
+            </p> 
+            </section> 
+          </header> 
+        </div>
+
+       <div class="slide">
+          <header>
+            <h1 style="font-size:90%">Cross-domain AJAX: "It's Not Possible"</h1>
+          </header>
+          <section class="text muchSmallerCode">
+            <ul style="line-height:24px">
+              <li><a href="https://developer.mozilla.org/En/Same_origin_policy_for_JavaScript">Same Origin Policy</a></li> 
+              <li>You simply cannot make a basic AJAX request of any arbitrary resource</li>
+            </ul>
+            <figure>
+              <pre class="brush: js; toolbar: false; ">
+  $.get("http://www.google.com/search?q=javascript",function(data) {
+    $("#searchResults").html(data);
+  }); 
+</pre>
+              <figcaption>
+              A cross-domain request. Will not work.
+              </figcaption>
+            </figure>
+            <p>Yes, there are workarounds:</p>
+            <ul style="line-height:24px">
+                <li><a href="http://insideria.com/2009/03/what-in-the-heck-is-jsonp-and.html">JSONP</a></li> 
+                <li><a href="http://www.nczonline.net/blog/2010/05/25/cross-domain-ajax-with-cross-origin-resource-sharing/">CORS</a>,</li>
+                <li><a href="http://developer.yahoo.com/yql/">YQL</a></li>
+                <li>Server-side proxy: use cURL, etc, on the server</li>
+            </ul>
+          </section>
+          </div>
+          
+        <div class="slide">
+          <header>
+            <h1><code>&lt;script&gt;</code> tags in AJAX Content</h1> 
+          </header>
+          <section class="text muchSmallerCode">
+            <ul>
+              <li>No, it's not just as good as a real callback</li> 
+              <li>Scripts won't always be executed</li>
+              <li><iframe style="width: 100%; height: 200px" src="http://jsfiddle.net/ajpiano/E78F3/embedded/"></iframe></li>
+              <li>Not fun to debug</li>
+              <li>No separation of concerns</li>
+            </ul>
+          </section>
+        </div>
+
+        <div class="slide debugger-screenshots"> 
+          <header> 
+            <h1>"I Found a jQuery Bug"</h1>
+          </header>
+          <section class="text">
+            <figure>
+              <img src="images/a_jquery_bug.png">
+              <figcaption>
+                Just because you get an error that points to a line number in jQuery<br/>
+                <strong>does not mean you have found a jQuery bug</strong>
+              </figcaption>
+            </figure>
+            <dl>
+              <dt>Ask Yourself This</dt>
+              <dd>"If [insert your issue] was REALLY a bug, wouldn't someone else besides me have noticed?"</dd>
+              <dt>Garbage In, Garbage Out</dt>
+              <dd>Somewhere along the line, you are probably passing something incorrect to jQuery.</dd>
+              <dt>To The Debugger!</dt>
+              <dd>But make sure you're using the <strong><em>unminified</em> source</strong> to debug!</dd>
+              <dd>"Is anyone familiar with the error 'c.x is undefined' on line 1 of the jQuery file?" No.</dd>
+            </dl>
+          </section>
+        </div>
+
+        <div class="slide"> 
+          <header> 
+            <h1>Stack Trace <a href="http://imgur.com/jacoj" target="_blank">or GTFO</a></h2>
+          </header>
+          <section class="text">
+            <figure>
+              <img src="images/a_jquery_bug.png">
+              <figcaption>
+                Just because you get an error that points to a line number in jQuery<br/>
+                <strong>does not mean you have found a jQuery bug</strong>
+              </figcaption>
+            </figure>
+            <dl>
+              <dt>Ask Yourself This</dt>
+              <dd>"If [insert your issue] was REALLY a bug, wouldn't someone else besides me have noticed?"</dd>
+              <dt>Garbage In, Garbage Out</dt>
+              <dd>Somewhere along the line, you are probably passing something incorrect to jQuery.</dd>
+              <dt>To The Debugger!</dt>
+              <dd>But make sure you're using the <strong><em>unminified</em> source</strong> to debug!</dd>
+              <dd>"Is anyone familiar with the error 'd.b is not a function on line 1' of the jQuery file?" No.</dd>
+            </dl>
+          </section>
+        </div>
+
+
+	<div class="slide"> 
+          <header> 
+            <h1>Something clever</h1> 
+          </header> 
+          <section class="text" style="margin-top:200px;"> 
+          <ul> 
+            <li><strong>adam j. sontag</strong></li> 
+            <li>ajpiano at ajpiano dot com</li> 
+            <li><a href="http://twitter.com/ajpiano">@ajpiano</a></li> 
+            <li><a href="http://ajpiano.com/">http://ajpiano.com</a></li> 
+            <li><a href="http://yayquery.com/">http://yayquery.com</a></li> 
+            <li>I'm ajpiano on freenode IRC (#jquery) and everywhere</li> 
+            <li><a href="http://fixingthesejquery.com.com/">Slides of this talk</a></li> 
+          </ul> 
+          </section> 
+        </div> 
+	
+ 
+ 
+	
+      </div> 
+      
+      <!-- slides --> 
+ 
+    </div> <!-- presentation --> 
+ 
+    <script> 
+      (function() {
+        var doc = document;
+        var disableBuilds = true;
+ 
+        var ctr = 0;
+        var spaces = /\s+/, a1 = [''];
+ 
+        var toArray = function(list) {
+          return Array.prototype.slice.call(list || [], 0);
+        };
+ 
+        var byId = function(id) {
+          if (typeof id == 'string') { return doc.getElementById(id); }
+          return id;
+        };
+ 
+        var query = function(query, root) {
+          if (!query) { return []; }
+          if (typeof query != 'string') { return toArray(query); }
+          if (typeof root == 'string') {
+            root = byId(root);
+            if(!root){ return []; }
+          }
+ 
+          root = root || document;
+          var rootIsDoc = (root.nodeType == 9);
+          var doc = rootIsDoc ? root : (root.ownerDocument || document);
+ 
+          // rewrite the query to be ID rooted
+          if (!rootIsDoc || ('>~+'.indexOf(query.charAt(0)) >= 0)) {
+            root.id = root.id || ('qUnique' + (ctr++));
+            query = '#' + root.id + ' ' + query;
+          }
+          // don't choke on something like ".yada.yada >"
+          if ('>~+'.indexOf(query.slice(-1)) >= 0) { query += ' *'; }
+ 
+          return toArray(doc.querySelectorAll(query));
+        };
+ 
+        var strToArray = function(s) {
+          if (typeof s == 'string' || s instanceof String) {
+            if (s.indexOf(' ') < 0) {
+              a1[0] = s;
+              return a1;
+            } else {
+              return s.split(spaces);
+            }
+          }
+          return s;
+        };
+ 
+        var addClass = function(node, classStr) {
+          classStr = strToArray(classStr);
+          var cls = ' ' + node.className + ' ';
+          for (var i = 0, len = classStr.length, c; i < len; ++i) {
+            c = classStr[i];
+            if (c && cls.indexOf(' ' + c + ' ') < 0) {
+              cls += c + ' ';
+            }
+          }
+          node.className = cls.trim();
+        };
+ 
+        var removeClass = function(node, classStr) {
+          var cls;
+          if (classStr !== undefined) {
+            classStr = strToArray(classStr);
+            cls = ' ' + node.className + ' ';
+            for (var i = 0, len = classStr.length; i < len; ++i) {
+              cls = cls.replace(' ' + classStr[i] + ' ', ' ');
+            }
+            cls = cls.trim();
+          } else {
+            cls = '';
+          }
+          if (node.className != cls) {
+            node.className = cls;
+          }
+        };
+ 
+        var toggleClass = function(node, classStr) {
+          var cls = ' ' + node.className + ' ';
+          if (cls.indexOf(' ' + classStr.trim() + ' ') >= 0) {
+            removeClass(node, classStr);
+          } else {
+            addClass(node, classStr);
+          }
+        };
+ 
+        var ua = navigator.userAgent;
+        var isFF = parseFloat(ua.split('Firefox/')[1]) || undefined;
+        var isWK = parseFloat(ua.split('WebKit/')[1]) || undefined;
+        var isOpera = parseFloat(ua.split('Opera/')[1]) || undefined;
+ 
+        var canTransition = (function() {
+          var ver = parseFloat(ua.split('Version/')[1]) || undefined;
+          // test to determine if this browser can handle CSS transitions.
+          var cachedCanTransition = 
+            (isWK || (isFF && isFF > 3.6 ) || (isOpera && ver >= 10.5));
+          return function() { return cachedCanTransition; }
+        })();
+ 
+        //
+        // Slide class
+        //
+        var Slide = function(node, idx) {
+          this._node = node;
+          if (idx >= 0) {
+            this._count = idx + 1;
+          }
+          if (this._node) {
+            addClass(this._node, 'slide distant-slide');
+          }
+          this._makeCounter();
+          this._makeBuildList();
+        };
+ 
+        Slide.prototype = {
+          _node: null,
+          _count: 0,
+          _buildList: [],
+          _visited: false,
+          _currentState: '',
+          _states: [ 'distant-slide', 'far-past',
+                     'past', 'current', 'future',
+                     'far-future', 'distant-slide' ],
+          setState: function(state) {
+            if (typeof state != 'string') {
+              state = this._states[state];
+            }
+            if (state == 'current' && !this._visited) {
+              this._visited = true;
+              this._makeBuildList();
+            }
+            removeClass(this._node, this._states);
+            addClass(this._node, state);
+            this._currentState = state;
+ 
+            // delay first auto run. Really wish this were in CSS.
+            /*
+            this._runAutos();
+            */
+            var _t = this;
+            setTimeout(function(){ _t._runAutos(); } , 400);
+          },
+          _makeCounter: function() {
+            if(!this._count || !this._node) { return; }
+            var c = doc.createElement('span');
+            c.innerHTML = this._count;
+            c.className = 'counter';
+            this._node.appendChild(c);
+          },
+          _makeBuildList: function() {
+            this._buildList = [];
+            if (disableBuilds) { return; }
+            if (this._node) {
+              this._buildList = query('[data-build] > *', this._node);
+            }
+            this._buildList.forEach(function(el) {
+              addClass(el, 'to-build');
+            });
+          },
+          _runAutos: function() {
+            if (this._currentState != 'current') {
+              return;
+            }
+            // find the next auto, slice it out of the list, and run it 
+            var idx = -1;
+            this._buildList.some(function(n, i) {
+              if (n.hasAttribute('data-auto')) {
+                idx = i;
+                return true;
+              }
+              return false;
+            });
+            if (idx >= 0) {
+              var elem = this._buildList.splice(idx, 1)[0];
+              var transitionEnd = isWK ? 'webkitTransitionEnd' : (isFF ? 'mozTransitionEnd' : 'oTransitionEnd');
+              var _t = this;
+              if (canTransition()) {
+                var l = function(evt) {
+                  elem.parentNode.removeEventListener(transitionEnd, l, false);
+                  _t._runAutos();
+                };
+                elem.parentNode.addEventListener(transitionEnd, l, false);
+                removeClass(elem, 'to-build');
+              } else {
+                setTimeout(function() {
+                  removeClass(elem, 'to-build');
+                  _t._runAutos();
+                }, 400);
+              }
+            }
+          },
+          buildNext: function() {
+            if (!this._buildList.length) {
+              return false;
+            }
+            removeClass(this._buildList.shift(), 'to-build');
+            return true;
+          },
+        };
+ 
+        //
+        // SlideShow class
+        //
+        var SlideShow = function(slides) {
+          this._slides = (slides || []).map(function(el, idx) {
+            return new Slide(el, idx);
+          });
+          var h = window.location.hash;
+          try {
+            this.current = parseInt(h.split('#slide')[1], 10);
+          } catch (e) { /* squeltch */ }
+          this.current = isNaN(this.current) ? 1 : this.current;
+          var _t = this;
+          doc.addEventListener('keydown', 
+              function(e) { _t.handleKeys(e); }, false);
+          doc.addEventListener('mousewheel', 
+              function(e) { _t.handleWheel(e); }, false);
+          doc.addEventListener('DOMMouseScroll', 
+              function(e) { _t.handleWheel(e); }, false);
+          doc.addEventListener('touchstart', 
+              function(e) { _t.handleTouchStart(e); }, false);
+          doc.addEventListener('touchend', 
+              function(e) { _t.handleTouchEnd(e); }, false);
+          window.addEventListener('popstate', 
+              function(e) { if (e.state) { _t.go(e.state); } }, false);
+          this._update();          
+        };
+ 
+        SlideShow.prototype = {
+          _slides: [],
+          _update: function(dontPush) {
+            document.querySelector('#presentation-counter').innerText = this.current;
+            if (history.pushState) {
+              if (!dontPush) {
+                history.replaceState(this.current, 'Slide ' + this.current, '#slide' + this.current);
+              }
+            } else {
+              window.location.hash = 'slide' + this.current;
+            }
+            for (var x = this.current-1; x < this.current + 7; x++) {
+              if (this._slides[x-4]) {
+                this._slides[x-4].setState(Math.max(0, x-this.current));
+              }
+            }
+          },
+ 
+          current: 0,
+          next: function() {
+            if (!this._slides[this.current-1].buildNext()) {
+              this.current = Math.min(this.current + 1, this._slides.length);
+              this._update();
+            }
+          },
+          prev: function() {
+            this.current = Math.max(this.current-1, 1);
+            this._update();
+          },
+          go: function(num) {
+            this.current = num;
+            this._update(true);
+          },
+ 
+          _notesOn: false,
+          showNotes: function() {
+            var isOn = this._notesOn = !this._notesOn;
+            query('.notes').forEach(function(el) {
+              el.style.display = (notesOn) ? 'block' : 'none';
+            });
+          },
+          switch3D: function() {
+            toggleClass(document.body, 'three-d');
+          },
+          handleWheel: function(e) {
+            var delta = 0;
+            if (e.wheelDelta) {
+              delta = e.wheelDelta/120;
+              if (isOpera) {
+                delta = -delta;
+              }
+            } else if (e.detail) {
+              delta = -e.detail/3;
+            }
+ 
+            if (delta > 0 ) {
+              this.prev();
+              return;
+            }
+            if (delta < 0 ) {
+              this.next();
+              return;
+            }
+          },
+          handleKeys: function(e) {
+            
+            if (/^(input|textarea)$/i.test(e.target.nodeName)) return;
+            
+            switch (e.keyCode) {
+              case 37: // left arrow
+                this.prev(); break;
+              case 39: // right arrow
+              case 32: // space
+                this.next(); break;
+              case 50: // 2
+                this.showNotes(); break;
+              case 51: // 3
+                this.switch3D(); break;
+            }
+          },
+          _touchStartX: 0,
+          handleTouchStart: function(e) {
+            this._touchStartX = e.touches[0].pageX;
+          },
+          handleTouchEnd: function(e) {
+            var delta = this._touchStartX - e.changedTouches[0].pageX;
+            var SWIPE_SIZE = 150;
+            if (delta > SWIPE_SIZE) {
+              this.next();
+            } else if (delta< -SWIPE_SIZE) {
+              this.prev();
+            }
+          },
+        };
+ 
+        // Initialize
+        var slideshow = new SlideShow(query('.slide'));
+      })();
+    </script> 
+ 
+    <!--[if lt IE 9]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">
+    </script>
+		<script>CFInstall.check({ mode: "overlay" });</script>
+    <![endif]--> 
+<script src="js/jquery.js"></script> 
+    <script> 
+/*
+ 
+ Syntax Highlighter: Dual licensed under the MIT and GPL licenses.
+ 
+ Syntax Highlighter shBrushJScript: Dual licensed under the MIT and GPL licenses.
+ 
+ Dual licensed under the MIT and GPL licenses.
+*/
+(function(){function j(f,e){if(!XRegExp.isRegExp(f))throw TypeError("type RegExp expected");var a=f._xregexp;f=XRegExp(f.source,m(f)+(e||""));if(a)f._xregexp={source:a.source,captureNames:a.captureNames?a.captureNames.slice(0):null};return f}function m(f){return(f.global?"g":"")+(f.ignoreCase?"i":"")+(f.multiline?"m":"")+(f.extended?"x":"")+(f.sticky?"y":"")}function p(f,e,a,b){var c=y.length,d,h,g;w=true;try{for(;c--;){g=y[c];if(a&g.scope&&(!g.trigger||g.trigger.call(b))){g.pattern.lastIndex=e;if((h=
+g.pattern.exec(f))&&h.index===e){d={output:g.handler.call(b,h,a),match:h};break}}}}catch(i){throw i;}finally{w=false}return d}function n(f,e,a){if(Array.prototype.indexOf)return f.indexOf(e,a);for(a=a||0;a<f.length;a++)if(f[a]===e)return a;return-1}XRegExp=function(f,e){var a=[],b=XRegExp.OUTSIDE_CLASS,c=0,d,h;if(XRegExp.isRegExp(f)){if(e!==undefined)throw TypeError("can't supply flags when constructing one RegExp from another");return j(f)}if(w)throw Error("can't call the XRegExp constructor within token definition functions");
+e=e||"";for(d={hasNamedCapture:false,captureNames:[],hasFlag:function(g){return e.indexOf(g)>-1},setFlag:function(g){e+=g}};c<f.length;)if(h=p(f,c,b,d)){a.push(h.output);c+=h.match[0].length||1}else if(h=s.exec.call(B[b],f.slice(c))){a.push(h[0]);c+=h[0].length}else{h=f.charAt(c);if(h==="[")b=XRegExp.INSIDE_CLASS;else if(h==="]")b=XRegExp.OUTSIDE_CLASS;a.push(h);c++}a=RegExp(a.join(""),s.replace.call(e,t,""));a._xregexp={source:f,captureNames:d.hasNamedCapture?d.captureNames:null};return a};XRegExp.version=
+"1.5.0";XRegExp.INSIDE_CLASS=1;XRegExp.OUTSIDE_CLASS=2;var r=/\$(?:(\d\d?|[$&`'])|{([$\w]+)})/g,t=/[^gimy]+|([\s\S])(?=[\s\S]*\1)/g,u=/^(?:[?*+]|{\d+(?:,\d*)?})\??/,w=false,y=[],s={exec:RegExp.prototype.exec,test:RegExp.prototype.test,match:String.prototype.match,replace:String.prototype.replace,split:String.prototype.split},z=s.exec.call(/()??/,"")[1]===undefined,C=function(){var f=/^/g;s.test.call(f,"");return!f.lastIndex}(),A=function(){var f=/x/g;s.replace.call("x",f,"");return!f.lastIndex}(),
+D=RegExp.prototype.sticky!==undefined,B={};B[XRegExp.INSIDE_CLASS]=/^(?:\\(?:[0-3][0-7]{0,2}|[4-7][0-7]?|x[\dA-Fa-f]{2}|u[\dA-Fa-f]{4}|c[A-Za-z]|[\s\S]))/;B[XRegExp.OUTSIDE_CLASS]=/^(?:\\(?:0(?:[0-3][0-7]{0,2}|[4-7][0-7]?)?|[1-9]\d*|x[\dA-Fa-f]{2}|u[\dA-Fa-f]{4}|c[A-Za-z]|[\s\S])|\(\?[:=!]|[?*+]\?|{\d+(?:,\d*)?}\??)/;XRegExp.addToken=function(f,e,a,b){y.push({pattern:j(f,"g"+(D?"y":"")),handler:e,scope:a||XRegExp.OUTSIDE_CLASS,trigger:b||null})};XRegExp.cache=function(f,e){var a=f+"/"+(e||"");return XRegExp.cache[a]||
+(XRegExp.cache[a]=XRegExp(f,e))};XRegExp.copyAsGlobal=function(f){return j(f,"g")};XRegExp.escape=function(f){return f.replace(/[-[\]{}()*+?.,\\^$|#\s]/g,"\\$&")};XRegExp.execAt=function(f,e,a,b){e=j(e,"g"+(b&&D?"y":""));e.lastIndex=a=a||0;f=e.exec(f);return b?f&&f.index===a?f:null:f};XRegExp.freezeTokens=function(){XRegExp.addToken=function(){throw Error("can't run addToken after freezeTokens");}};XRegExp.isRegExp=function(f){return Object.prototype.toString.call(f)==="[object RegExp]"};XRegExp.iterate=
+function(f,e,a,b){for(var c=j(e,"g"),d=-1,h;h=c.exec(f);){a.call(b,h,++d,f,c);c.lastIndex===h.index&&c.lastIndex++}if(e.global)e.lastIndex=0};XRegExp.matchChain=function(f,e){return function a(b,c){var d=e[c].regex?e[c]:{regex:e[c]},h=j(d.regex,"g"),g=[],i;for(i=0;i<b.length;i++)XRegExp.iterate(b[i],h,function(l){g.push(d.backref?l[d.backref]||"":l[0])});return c===e.length-1||!g.length?g:a(g,c+1)}([f],0)};RegExp.prototype.apply=function(f,e){return this.exec(e[0])};RegExp.prototype.call=function(f,
+e){return this.exec(e)};RegExp.prototype.exec=function(f){var e=s.exec.apply(this,arguments),a;if(e){if(!z&&e.length>1&&n(e,"")>-1){a=RegExp(this.source,s.replace.call(m(this),"g",""));s.replace.call(f.slice(e.index),a,function(){for(var c=1;c<arguments.length-2;c++)if(arguments[c]===undefined)e[c]=undefined})}if(this._xregexp&&this._xregexp.captureNames)for(var b=1;b<e.length;b++)if(a=this._xregexp.captureNames[b-1])e[a]=e[b];!C&&this.global&&!e[0].length&&this.lastIndex>e.index&&this.lastIndex--}return e};
+if(!C)RegExp.prototype.test=function(f){(f=s.exec.call(this,f))&&this.global&&!f[0].length&&this.lastIndex>f.index&&this.lastIndex--;return!!f};String.prototype.match=function(f){XRegExp.isRegExp(f)||(f=RegExp(f));if(f.global){var e=s.match.apply(this,arguments);f.lastIndex=0;return e}return f.exec(this)};String.prototype.replace=function(f,e){var a=XRegExp.isRegExp(f),b,c;if(a&&typeof e.valueOf()==="string"&&e.indexOf("${")===-1&&A)return s.replace.apply(this,arguments);if(a){if(f._xregexp)b=f._xregexp.captureNames}else f+=
+"";if(typeof e==="function")c=s.replace.call(this,f,function(){if(b){arguments[0]=new String(arguments[0]);for(var d=0;d<b.length;d++)if(b[d])arguments[0][b[d]]=arguments[d+1]}if(a&&f.global)f.lastIndex=arguments[arguments.length-2]+arguments[0].length;return e.apply(null,arguments)});else c=s.replace.call(this+"",f,function(){var d=arguments;return s.replace.call(e,r,function(h,g,i){if(g)switch(g){case "$":return"$";case "&":return d[0];case "`":return d[d.length-1].slice(0,d[d.length-2]);case "'":return d[d.length-
+1].slice(d[d.length-2]+d[0].length);default:i="";g=+g;if(!g)return h;for(;g>d.length-3;){i=String.prototype.slice.call(g,-1)+i;g=Math.floor(g/10)}return(g?d[g]||"":"$")+i}else{g=+i;if(g<=d.length-3)return d[g];g=b?n(b,i):-1;return g>-1?d[g+1]:h}})});if(a&&f.global)f.lastIndex=0;return c};String.prototype.split=function(f,e){if(!XRegExp.isRegExp(f))return s.split.apply(this,arguments);var a=this+"",b=[],c=0,d,h;if(e===undefined||+e<0)e=Infinity;else{e=Math.floor(+e);if(!e)return[]}for(f=XRegExp.copyAsGlobal(f);d=
+f.exec(a);){if(f.lastIndex>c){b.push(a.slice(c,d.index));d.length>1&&d.index<a.length&&Array.prototype.push.apply(b,d.slice(1));h=d[0].length;c=f.lastIndex;if(b.length>=e)break}f.lastIndex===d.index&&f.lastIndex++}if(c===a.length){if(!s.test.call(f,"")||h)b.push("")}else b.push(a.slice(c));return b.length>e?b.slice(0,e):b};XRegExp.addToken(/\(\?#[^)]*\)/,function(f){return s.test.call(u,f.input.slice(f.index+f[0].length))?"":"(?:)"});XRegExp.addToken(/\((?!\?)/,function(){this.captureNames.push(null);
+return"("});XRegExp.addToken(/\(\?<([$\w]+)>/,function(f){this.captureNames.push(f[1]);this.hasNamedCapture=true;return"("});XRegExp.addToken(/\\k<([\w$]+)>/,function(f){var e=n(this.captureNames,f[1]);return e>-1?"\\"+(e+1)+(isNaN(f.input.charAt(f.index+f[0].length))?"":"(?:)"):f[0]});XRegExp.addToken(/\[\^?]/,function(f){return f[0]==="[]"?"\\b\\B":"[\\s\\S]"});XRegExp.addToken(/^\(\?([imsx]+)\)/,function(f){this.setFlag(f[1]);return""});XRegExp.addToken(/(?:\s+|#.*)+/,function(f){return s.test.call(u,
+f.input.slice(f.index+f[0].length))?"":"(?:)"},XRegExp.OUTSIDE_CLASS,function(){return this.hasFlag("x")});XRegExp.addToken(/\./,function(){return"[\\s\\S]"},XRegExp.OUTSIDE_CLASS,function(){return this.hasFlag("s")})})();
+var SyntaxHighlighter=function(){function j(a,b){a.className.indexOf(b)!=-1||(a.className+=" "+b)}function m(a){return a.indexOf("highlighter_")==0?a:"highlighter_"+a}function p(a){return e.vars.highlighters[m(a)]}function n(a,b,c){if(a==null)return null;var d=c!=true?a.childNodes:[a.parentNode],h={"#":"id",".":"className"}[b.substr(0,1)]||"nodeName",g,i;g=h!="nodeName"?b.substr(1):b.toUpperCase();if((a[h]||"").indexOf(g)!=-1)return a;for(a=0;d&&a<d.length&&i==null;a++)i=n(d[a],b,c);return i}function r(a,
+b){var c={},d;for(d in a)c[d]=a[d];for(d in b)c[d]=b[d];return c}function t(a,b,c,d){function h(g){g=g||window.event;if(!g.target){g.target=g.srcElement;g.preventDefault=function(){this.returnValue=false}}c.call(d||window,g)}a.attachEvent?a.attachEvent("on"+b,h):a.addEventListener(b,h,false)}function u(a,b){var c=e.vars.discoveredBrushes,d=null;if(c==null){c={};for(var h in e.brushes){var g=e.brushes[h];d=g.aliases;if(d!=null){g.brushName=h.toLowerCase();for(g=0;g<d.length;g++)c[d[g]]=h}}e.vars.discoveredBrushes=
+c}d=e.brushes[c[a]];d==null&&b!=false&&window.alert(e.config.strings.alert+(e.config.strings.noBrush+a));return d}function w(a,b){for(var c=a.split("\n"),d=0;d<c.length;d++)c[d]=b(c[d],d);return c.join("\n")}function y(a,b){if(a==null||a.length==0||a=="\n")return a;a=a.replace(/</g,"&lt;");a=a.replace(/ {2,}/g,function(c){for(var d="",h=0;h<c.length-1;h++)d+=e.config.space;return d+" "});if(b!=null)a=w(a,function(c){if(c.length==0)return"";var d="";c=c.replace(/^(&nbsp;| )+/,function(h){d=h;return""});
+if(c.length==0)return d;return d+'<code class="'+b+'">'+c+"</code>"});return a}function s(a,b){a.split("\n");for(var c="",d=0;d<50;d++)c+="                    ";return a=w(a,function(h){if(h.indexOf("\t")==-1)return h;for(var g=0;(g=h.indexOf("\t"))!=-1;)h=h.substr(0,g)+c.substr(0,b-g%b)+h.substr(g+1,h.length);return h})}function z(a){return a.replace(/^\s+|\s+$/g,"")}function C(a,b){if(a.index<b.index)return-1;else if(a.index>b.index)return 1;else if(a.length<b.length)return-1;else if(a.length>b.length)return 1;
+return 0}function A(a,b){function c(l){return l[0]}for(var d=null,h=[],g=b.func?b.func:c;(d=b.regex.exec(a))!=null;){var i=g(d,b);if(typeof i=="string")i=[new e.Match(i,d.index,b.css)];h=h.concat(i)}return h}function D(a){var b=/(.*)((&gt;|&lt;).*)/;return a.replace(e.regexLib.url,function(c){var d="",h=null;if(h=b.exec(c)){c=h[1];d=h[2]}return'<a href="'+c+'">'+c+"</a>"+d})}function B(){for(var a=document.getElementsByTagName("script"),b=[],c=0;c<a.length;c++)a[c].type=="syntaxhighlighter"&&b.push(a[c]);
+return b}function f(a){a=a.target;var b=n(a,".syntaxhighlighter",true);a=n(a,".container",true);var c=document.createElement("textarea");if(!(!a||!b||n(a,"textarea"))){p(b.id);j(b,"source");for(var d=a.childNodes,h=[],g=0;g<d.length;g++)h.push(d[g].innerText||d[g].textContent);h=h.join("\r");c.appendChild(document.createTextNode(h));a.appendChild(c);c.focus();c.select();t(c,"blur",function(){c.parentNode.removeChild(c);b.className=b.className.replace("source","")})}}if(typeof require!="undefined"&&
+typeof XRegExp=="undefined")XRegExp=require("XRegExp").XRegExp;var e={defaults:{"class-name":"","first-line":1,"pad-line-numbers":false,highlight:null,title:null,"smart-tabs":true,"tab-size":4,gutter:true,toolbar:true,"quick-code":true,collapse:false,"auto-links":true,light:false,"html-script":false},config:{space:"&nbsp;",useScriptTags:true,bloggerMode:false,stripBrs:false,tagName:"pre",strings:{expandSource:"expand source",help:"?",alert:"SyntaxHighlighter\n\n",noBrush:"Can't find brush for: ",
+brushNotHtmlScript:"Brush wasn't configured for html-script option: ",aboutDialog:'<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><title>About SyntaxHighlighter</title></head><body style="font-family:Geneva,Arial,Helvetica,sans-serif;background-color:#fff;color:#000;font-size:1em;text-align:center;"><div style="text-align:center;margin-top:1.5em;"><div style="font-size:xx-large;">SyntaxHighlighter</div><div style="font-size:.75em;margin-bottom:3em;"><div>version 3.0.83 (July 02 2010)</div><div><a href="http://alexgorbatchev.com/SyntaxHighlighter" target="_blank" style="color:#005896">http://alexgorbatchev.com/SyntaxHighlighter</a></div><div>JavaScript code syntax highlighter.</div><div>Copyright 2004-2010 Alex Gorbatchev.</div></div><div>If you like this script, please <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=2930402" style="color:#005896">donate</a> to <br/>keep development active!</div></div></body></html>'}},
+vars:{discoveredBrushes:null,highlighters:{}},brushes:{},regexLib:{multiLineCComments:/\/\*[\s\S]*?\*\//gm,singleLineCComments:/\/\/.*$/gm,singleLinePerlComments:/#.*$/gm,doubleQuotedString:/"([^\\"\n]|\\.)*"/g,singleQuotedString:/'([^\\'\n]|\\.)*'/g,multiLineDoubleQuotedString:new XRegExp('"([^\\\\"]|\\\\.)*"',"gs"),multiLineSingleQuotedString:new XRegExp("'([^\\\\']|\\\\.)*'","gs"),xmlComments:/(&lt;|<)!--[\s\S]*?--(&gt;|>)/gm,url:/\w+:\/\/[\w-.\/?%&=:@;]*/g,phpScriptTags:{left:/(&lt;|<)\?=?/g,
+right:/\?(&gt;|>)/g},aspScriptTags:{left:/(&lt;|<)%=?/g,right:/%(&gt;|>)/g},scriptScriptTags:{left:/(&lt;|<)\s*script.*?(&gt;|>)/gi,right:/(&lt;|<)\/\s*script\s*(&gt;|>)/gi}},toolbar:{getHtml:function(a){function b(i,l){return e.toolbar.getButtonHtml(i,l,e.config.strings[l])}for(var c='<div class="toolbar">',d=e.toolbar.items,h=d.list,g=0;g<h.length;g++)c+=(d[h[g]].getHtml||b)(a,h[g]);c+="</div>";return c},getButtonHtml:function(a,b,c){return'<span><a href="#" class="toolbar_item command_'+b+" "+
+b+'">'+c+"</a></span>"},handler:function(a){var b=a.target,c=b.className||"";b=p(n(b,".syntaxhighlighter",true).id);var d=function(h){return(h=(new RegExp(h+"_(\\w+)")).exec(c))?h[1]:null}("command");b&&d&&e.toolbar.items[d].execute(b);a.preventDefault()},items:{list:["expandSource","help"],expandSource:{getHtml:function(a){if(a.getParam("collapse")!=true)return"";var b=a.getParam("title");return e.toolbar.getButtonHtml(a,"expandSource",b?b:e.config.strings.expandSource)},execute:function(a){a=document.getElementById(m(a.id));
+a.className=a.className.replace("collapsed","")}},help:{execute:function(){var a="scrollbars=0";a+=", left="+(screen.width-500)/2+", top="+(screen.height-250)/2+", width=500, height=250";a=a.replace(/^,/,"");a=window.open("","_blank",a);a.focus();var b=a.document;b.write(e.config.strings.aboutDialog);b.close();a.focus()}}}},findElements:function(a,b){var c;if(b)c=[b];else{c=document.getElementsByTagName(e.config.tagName);for(var d=[],h=0;h<c.length;h++)d.push(c[h]);c=d}c=c;d=[];if(e.config.useScriptTags)c=
+c.concat(B());if(c.length===0)return d;for(h=0;h<c.length;h++){for(var g=c[h],i=c[h].className,l=void 0,k={},o=new XRegExp("^\\[(?<values>(.*?))\\]$"),q=new XRegExp("(?<name>[\\w-]+)\\s*:\\s*(?<value>[\\w-%#]+|\\[.*?\\]|\".*?\"|'.*?')\\s*;?","g");(l=q.exec(i))!=null;){var v=l.value.replace(/^['"]|['"]$/g,"");if(v!=null&&o.test(v)){v=o.exec(v);v=v.values.length>0?v.values.split(/\s*,\s*/):[]}k[l.name]=v}g={target:g,params:r(a,k)};g.params.brush!=null&&d.push(g)}return d},highlight:function(a,b){var c=
+this.findElements(a,b),d=null,h=e.config;if(c.length!==0)for(var g=0;g<c.length;g++){b=c[g];var i=b.target,l=b.params,k=l.brush,o;if(k!=null){if(l["html-script"]=="true"||e.defaults["html-script"]==true){d=new e.HtmlScript(k);k="htmlscript"}else if(d=u(k))d=new d;else continue;o=i.innerHTML;if(h.useScriptTags){o=o;var q=z(o),v=false;if(q.indexOf("<![CDATA[")==0){q=q.substring(9);v=true}var E=q.length;if(q.indexOf("]]\>")==E-3){q=q.substring(0,E-3);v=true}o=v?q:o}if((i.title||"")!="")l.title=i.title;
+l.brush=k;d.init(l);b=d.getDiv(o);if((i.id||"")!="")b.id=i.id;i.parentNode.replaceChild(b,i)}}},all:function(a){t(window,"load",function(){e.highlight(a)})}};e.all=e.all;e.highlight=e.highlight;e.Match=function(a,b,c){this.value=a;this.index=b;this.length=a.length;this.css=c;this.brushName=null};e.Match.prototype.toString=function(){return this.value};e.HtmlScript=function(a){function b(k,o){for(var q=0;q<k.length;q++)k[q].index+=o}var c=u(a),d,h=new e.brushes.Xml,g=this,i="getDiv getHtml init".split(" ");
+if(c!=null){d=new c;for(var l=0;l<i.length;l++)(function(){var k=i[l];g[k]=function(){return h[k].apply(h,arguments)}})();d.htmlScript==null?window.alert(e.config.strings.alert+(e.config.strings.brushNotHtmlScript+a)):h.regexList.push({regex:d.htmlScript.code,func:function(k){for(var o=k.code,q=[],v=d.regexList,E=k.index+k.left.length,F=d.htmlScript,x,G=0;G<v.length;G++){x=A(o,v[G]);b(x,E);q=q.concat(x)}if(F.left!=null&&k.left!=null){x=A(k.left,F.left);b(x,k.index);q=q.concat(x)}if(F.right!=null&&
+k.right!=null){x=A(k.right,F.right);b(x,k.index+k[0].lastIndexOf(k.right));q=q.concat(x)}for(k=0;k<q.length;k++)q[k].brushName=c.brushName;return q}})}};e.Highlighter=function(){};e.Highlighter.prototype={getParam:function(a,b){var c=this.params[a];c=c==null?b:c;var d={"true":true,"false":false}[c];return d==null?c:d},create:function(a){return document.createElement(a)},findMatches:function(a,b){var c=[];if(a!=null)for(var d=0;d<a.length;d++)if(typeof a[d]=="object")c=c.concat(A(b,a[d]));return this.removeNestedMatches(c.sort(C))},
+removeNestedMatches:function(a){for(var b=0;b<a.length;b++)if(a[b]!==null)for(var c=a[b],d=c.index+c.length,h=b+1;h<a.length&&a[b]!==null;h++){var g=a[h];if(g!==null)if(g.index>d)break;else if(g.index==c.index&&g.length>c.length)a[b]=null;else if(g.index>=c.index&&g.index<d)a[h]=null}return a},figureOutLineNumbers:function(a){var b=[],c=parseInt(this.getParam("first-line"));w(a,function(d,h){b.push(h+c)});return b},isLineHighlighted:function(a){var b=this.getParam("highlight",[]);if(typeof b!="object"&&
+b.push==null)b=[b];a:{a=a.toString();var c=void 0;for(c=c=Math.max(c||0,0);c<b.length;c++)if(b[c]==a){b=c;break a}b=-1}return b!=-1},getLineHtml:function(a,b,c){a=["line","number"+b,"index"+a,"alt"+(b%2==0?1:2).toString()];this.isLineHighlighted(b)&&a.push("highlighted");b==0&&a.push("break");return'<div class="'+a.join(" ")+'">'+c+"</div>"},getLineNumbersHtml:function(a,b){var c="",d=a.split("\n").length,h=parseInt(this.getParam("first-line")),g=this.getParam("pad-line-numbers");if(g==true)g=(h+
+d-1).toString().length;else if(isNaN(g)==true)g=0;for(var i=0;i<d;i++){var l=b?b[i]:h+i,k;if(l==0)k=e.config.space;else{k=g;for(var o=l.toString();o.length<k;)o="0"+o;k=o}c+=this.getLineHtml(i,l,k)}return c},getCodeLinesHtml:function(a,b){a=z(a);var c=a.split("\n");this.getParam("pad-line-numbers");var d=parseInt(this.getParam("first-line"));a="";for(var h=this.getParam("brush"),g=0;g<c.length;g++){var i=c[g],l=/^(&nbsp;|\s)+/.exec(i),k=null,o=b?b[g]:d+g;if(l!=null){k=l[0].toString();i=i.substr(k.length);
+k=k.replace(" ",e.config.space)}i=z(i);if(i.length==0)i=e.config.space;a+=this.getLineHtml(g,o,(k!=null?'<code class="'+h+' spaces">'+k+"</code>":"")+i)}return a},getTitleHtml:function(a){return a?"<caption>"+a+"</caption>":""},getMatchesHtml:function(a,b){function c(o){return(o=o?o.brushName||g:g)?o+" ":""}for(var d=0,h="",g=this.getParam("brush",""),i=0;i<b.length;i++){var l=b[i],k;if(!(l===null||l.length===0)){k=c(l);h+=y(a.substr(d,l.index-d),k+"plain")+y(l.value,k+l.css);d=l.index+l.length+(l.offset||
+0)}}h+=y(a.substr(d),c()+"plain");return h},getHtml:function(a){var b="",c=["syntaxhighlighter"],d;if(this.getParam("light")==true)this.params.toolbar=this.params.gutter=false;className="syntaxhighlighter";this.getParam("collapse")==true&&c.push("collapsed");if((gutter=this.getParam("gutter"))==false)c.push("nogutter");c.push(this.getParam("class-name"));c.push(this.getParam("brush"));a=a.replace(/^[ ]*[\n]+|[\n]*[ ]*$/g,"").replace(/\r/g," ");b=this.getParam("tab-size");if(this.getParam("smart-tabs")==
+true)a=s(a,b);else{for(var h="",g=0;g<b;g++)h+=" ";a=a.replace(/\t/g,h)}a:{b=a=a;h=/<br\s*\/?>|&lt;br\s*\/?&gt;/gi;if(e.config.bloggerMode==true)b=b.replace(h,"\n");if(e.config.stripBrs==true)b=b.replace(h,"");b=b.split("\n");h=/^\s*/;g=1E3;for(var i=0;i<b.length&&g>0;i++){var l=b[i];if(z(l).length!=0){l=h.exec(l);if(l==null){a=a;break a}g=Math.min(l[0].length,g)}}if(g>0)for(i=0;i<b.length;i++)b[i]=b[i].substr(g);a=b.join("\n")}if(gutter)d=this.figureOutLineNumbers(a);b=this.findMatches(this.regexList,
+a);b=this.getMatchesHtml(a,b);b=this.getCodeLinesHtml(b,d);if(this.getParam("auto-links"))b=D(b);typeof navigator!="undefined"&&navigator.userAgent&&navigator.userAgent.match(/MSIE/)&&c.push("ie");return b='<div id="'+m(this.id)+'" class="'+c.join(" ")+'">'+(this.getParam("toolbar")?e.toolbar.getHtml(this):"")+'<table border="0" cellpadding="0" cellspacing="0">'+this.getTitleHtml(this.getParam("title"))+"<tbody><tr>"+(gutter?'<td class="gutter">'+this.getLineNumbersHtml(a)+"</td>":"")+'<td class="code"><div class="container">'+
+b+"</div></td></tr></tbody></table></div>"},getDiv:function(a){if(a===null)a="";this.code=a;var b=this.create("div");b.innerHTML=this.getHtml(a);this.getParam("toolbar")&&t(n(b,".toolbar"),"click",e.toolbar.handler);this.getParam("quick-code")&&t(n(b,".code"),"dblclick",f);return b},init:function(a){this.id=""+Math.round(Math.random()*1E6).toString();e.vars.highlighters[m(this.id)]=this;this.params=r(e.defaults,a||{});if(this.getParam("light")==true)this.params.toolbar=this.params.gutter=false},getKeywords:function(a){a=
+a.replace(/^\s+|\s+$/g,"").replace(/\s+/g,"|");return"\\b(?:"+a+")\\b"},forHtmlScript:function(a){this.htmlScript={left:{regex:a.left,css:"script"},right:{regex:a.right,css:"script"},code:new XRegExp("(?<left>"+a.left.source+")(?<code>.*?)(?<right>"+a.right.source+")","sgi")}}};return e}();typeof exports!="undefined"&&(exports.SyntaxHighlighter=SyntaxHighlighter);
+(function(){function j(){var m=SyntaxHighlighter.regexLib;this.regexList=[{regex:m.multiLineDoubleQuotedString,css:"string"},{regex:m.multiLineSingleQuotedString,css:"string"},{regex:m.singleLineCComments,css:"comments"},{regex:m.multiLineCComments,css:"comments"},{regex:/\s*#.*/gm,css:"preprocessor"},{regex:new RegExp(this.getKeywords("break case catch continue default delete do else false  for function if in instanceof new null return super switch this throw true try typeof var while with"),"gm"),
+css:"keyword"}];this.forHtmlScript(m.scriptScriptTags)}typeof require!="undefined"&&(SyntaxHighlighter=require("shCore").SyntaxHighlighter);j.prototype=new SyntaxHighlighter.Highlighter;j.aliases=["js","jscript","javascript"];SyntaxHighlighter.brushes.JScript=j;typeof exports!="undefined"&&(exports.Brush=j)})();
+(function(){function j(){this.regexList=[{regex:new XRegExp("(\\&lt;|<)\\!\\[[\\w\\s]*?\\[(.|\\s)*?\\]\\](\\&gt;|>)","gm"),css:"color2"},{regex:SyntaxHighlighter.regexLib.xmlComments,css:"comments"},{regex:new XRegExp("(&lt;|<)[\\s\\/\\?]*(\\w+)(?<attributes>.*?)[\\s\\/\\?]*(&gt;|>)","sg"),func:function(m){var p=SyntaxHighlighter.Match,n=m[0],r=(new XRegExp("(&lt;|<)[\\s\\/\\?]*(?<name>[:\\w-\\.]+)","xg")).exec(n),t=[];if(m.attributes!=null)for(var u,w=new XRegExp("(?<name> [\\w:\\-\\.]+)\\s*=\\s*(?<value> \".*?\"|'.*?'|\\w+)",
+"xg");(u=w.exec(n))!=null;){t.push(new p(u.name,m.index+u.index,"color1"));t.push(new p(u.value,m.index+u.index+u[0].indexOf(u.value),"string"))}r!=null&&t.push(new p(r.name,m.index+r[0].indexOf(r.name),"keyword"));return t}}]}typeof require!="undefined"&&(SyntaxHighlighter=require("shCore").SyntaxHighlighter);j.prototype=new SyntaxHighlighter.Highlighter;j.aliases=["xml","xhtml","xslt","html"];SyntaxHighlighter.brushes.Xml=j;typeof exports!="undefined"&&(exports.Brush=j)})();
+    </script> 
+    <script type='text/javascript'> 
+	(function(){
+		var corecss = document.createElement('link');
+		var themecss = document.createElement('link');
+	})();
+	SyntaxHighlighter.config.clipboardSwf = 'img/clipboard.swf';
+	SyntaxHighlighter.config.strings.expandSource = 'show source';
+	SyntaxHighlighter.config.strings.viewSource = 'view source';
+	SyntaxHighlighter.config.strings.copyToClipboard = 'copy to clipboard';
+	SyntaxHighlighter.config.strings.copyToClipboardConfirmation = 'The code is in your clipboard now';
+	SyntaxHighlighter.config.strings.print = 'print';
+	SyntaxHighlighter.config.strings.help = '?';
+	SyntaxHighlighter.config.strings.alert = 'SyntaxHighlighter\n\n';
+	SyntaxHighlighter.config.strings.noBrush = 'Can\'t find brush for: ';
+	SyntaxHighlighter.config.strings.brushNotHtmlScript = 'Brush wasn\'t configured for html-script option: ';
+	SyntaxHighlighter.defaults['tab-size'] = 2;
+	SyntaxHighlighter.all();
+
+
+        /**
+        * hoverIntent r5 // 2007.03.27 // jQuery 1.1.2+
+        * <http://cherne.net/brian/resources/jquery.hoverIntent.html>
+        * 
+        * @param  f  onMouseOver function || An object with configuration options
+        * @param  g  onMouseOut function  || Nothing (use configuration options object)
+        * @author    Brian Cherne <brian@cherne.net>
+        */
+        (function($){$.fn.hoverIntent=function(f,g){var cfg={sensitivity:7,interval:100,timeout:0};cfg=$.extend(cfg,g?{over:f,out:g}:f);var cX,cY,pX,pY;var track=function(ev){cX=ev.pageX;cY=ev.pageY;};var compare=function(ev,ob){ob.hoverIntent_t=clearTimeout(ob.hoverIntent_t);if((Math.abs(pX-cX)+Math.abs(pY-cY))<cfg.sensitivity){$(ob).unbind("mousemove",track);ob.hoverIntent_s=1;return cfg.over.apply(ob,[ev]);}else{pX=cX;pY=cY;ob.hoverIntent_t=setTimeout(function(){compare(ev,ob);},cfg.interval);}};var delay=function(ev,ob){ob.hoverIntent_t=clearTimeout(ob.hoverIntent_t);ob.hoverIntent_s=0;return cfg.out.apply(ob,[ev]);};var handleHover=function(e){var p=(e.type=="mouseover"?e.fromElement:e.toElement)||e.relatedTarget;while(p&&p!=this){try{p=p.parentNode;}catch(e){p=this;}}if(p==this){return false;}var ev=jQuery.extend({},e);var ob=this;if(ob.hoverIntent_t){ob.hoverIntent_t=clearTimeout(ob.hoverIntent_t);}if(e.type=="mouseover"){pX=ev.pageX;pY=ev.pageY;$(ob).bind("mousemove",track);if(ob.hoverIntent_s!=1){ob.hoverIntent_t=setTimeout(function(){compare(ev,ob);},cfg.interval);}}else{$(ob).unbind("mousemove",track);if(ob.hoverIntent_s==1){ob.hoverIntent_t=setTimeout(function(){delay(ev,ob);},cfg.timeout);}}};return this.mouseover(handleHover).mouseout(handleHover);};})(jQuery);
+                
+        $(document).ready(function() {
+
+            var screenshots = $("div.accordioned figure img");
+            screenshots.hoverIntent({
+              over:function(e) {
+                $(this).animate({height: "200px"},500);
+              },
+              out:function(e) {
+              $(this).animate({height: "40px"},500);
+              },
+              timeout:100
+            });
+        });
+
+</script> 
+<script type="text/javascript"> 
+ 
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-19220806-1']);
+  _gaq.push(['_trackPageview']);
+ 
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+ 
+</script> 
+    
+  </body> 
+</html> 

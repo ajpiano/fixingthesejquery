@@ -1,0 +1,79 @@
+
+body
+{
+	background-image: url('img/36original.jpg');
+}
+
+
+.main
+{
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 50px;
+	width: 900px;
+}
+
+
+.content
+{
+	
+}
+
+	.navigation
+	{
+		height: 50px;
+		position: relative;
+	}
+		
+		.navigation li
+		{
+			position: absolute;
+		}
+
+		.navigation .home
+		{
+			z-index: 1;
+			left: 39px;
+			top: 0px;
+		}
+
+		.navigation .description
+		{
+			z-index: 2;
+			top: 7px;
+			left: 169px;
+		}
+
+		.navigation .roomsrates
+		{
+			z-index: 3;
+			left: 349px;
+			top: 0px;
+		}
+
+		.navigation .booking
+		{
+			z-index: 4;
+			left: 505px;
+			top: -5px;
+		}
+
+		.navigation .photos
+		{
+			z-index: 5;
+			left: 677px;
+			top: 10px;
+		}
+
+
+	.page
+	{		
+		background-image: url('img/main900s.png');
+		position: relative;
+		z-index: 10;
+		height: 573px;
+		padding-top: 60px;
+			padding-left: 100px;
+			padding-right: 100px;
+	}
+

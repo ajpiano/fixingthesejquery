@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
+    <meta charset="utf-8"> 
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge;chrome=1"> 
+
+    <title>I'm just gonna roll my own tooltip for no reason!</title>
+    <style>
+      body { font-size:1.5em; background: #fff;}
+      #tooltip { border:3px solid #000; background: #bada55; }
+    </style>
+  </head> 
+  <body> 
+    <header> 
+    <h4>Check Out My Awesome, Hand-Rolled Tooltip!</h4>
+    </header>
+    <ul>
+      <li><span>Mouse</span></li>
+      <li><span>Over</span></li>
+      <li><span>For</span></li>
+      <li><span>Great</span></li>
+      <li><span>Success</span></li>
+    </ul>
+
+    <div id='tooltip'>
+      I just went into an element that says <span>something</span> 
+    </div>
+
+    <script src="js/jquery.js"></script>
+    <script>
+      $(document).ready(function() {
+
+        var tip = $("#tooltip").css("position","absolute").hide(),
+            span = tip.find("span");
+
+        $("ul li span").hover(function(e) {
+          var $t = $(this),
+            w = $t.width(),
+            o = $t.offset();
+          o.left = o.left + w;
+          span.text($t.text())
+          tip.offset(o).show();
+          alert(o);
+        },function(e) {
+          tip.hide();
+        });
+        
+        /*
+        if (confirm("Are You Ready For This")) {
+        }
+        */
+
+      });
+    </script> 
+   
+
+  </body>
+</html>
