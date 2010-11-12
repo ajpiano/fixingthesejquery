@@ -1255,25 +1255,34 @@ var newContent = getContent(); // newContent === undefined
 
         <div class="slide"> 
           <header> 
-            <h1>Stack Trace <a href="http://imgur.com/jacoj" target="_blank">or GTFO</a></h2>
+            <h1>Stack Trace <a href="http://imgur.com/jacoj" target="_blank">or GTFO</a></h1>
           </header>
           <section class="text">
-            <figure>
-              <img src="images/a_jquery_bug.png">
-              <figcaption>
-                Just because you get an error that points to a line number in jQuery<br/>
-                <strong>does not mean you have found a jQuery bug</strong>
-              </figcaption>
-            </figure>
-            <dl>
-              <dt>Ask Yourself This</dt>
-              <dd>"If [insert your issue] was REALLY a bug, wouldn't someone else besides me have noticed?"</dd>
-              <dt>Garbage In, Garbage Out</dt>
-              <dd>Somewhere along the line, you are probably passing something incorrect to jQuery.</dd>
-              <dt>To The Debugger!</dt>
-              <dd>But make sure you're using the <strong><em>unminified</em> source</strong> to debug!</dd>
-              <dd>"Is anyone familiar with the error 'd.b is not a function on line 1' of the jQuery file?" No.</dd>
+          </section>
+        </div>
+
+
+        <div class="slide"> 
+          <header> 
+          <h1>jQuery is bugging</h1>
+          </header>
+          <section class="text">
+            <dl style="font-size:24px;line-height:28px;">
+              <dt>Have you recently upgraded, and your code has stopped working?</dt>
+              <dd>It might be an intentional change.  Check release notes, blogs, commits, etc.</dd>
+              <dt>If you <em>really</em> think it's a bug</dt>
+              <dd>
+                <ul>
+                  <li>Read the bug reporting guidelines</li>
+                  <li>Check to see if <a href="http://bugs.jquery.com/search">someone else reported it</a></li>
+                  <li>Make a solid test case, illustrating <strong>ONLY</strong> that issue on <a href="http://jsfiddle.net">jsFiddle</a>.</li>
+                  <li><strong>Protip: </strong>You might figure out what the real bug is</li>
+                  <li>File a <a href="http://bugs.jquery.com">ticket</a></li>
+                </ul>
+              </dd>
             </dl>
+
+            <dl>
           </section>
         </div>
 
