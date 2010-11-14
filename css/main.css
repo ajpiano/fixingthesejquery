@@ -1,5 +1,6 @@
+
       body {
-        font: 24px "Helvetica Neue", "Lucida Grande", "Trebuchet MS", Verdana, sans-serif;
+        font: 24px "CartoGothicStdBook","Helvetica Neue", "Lucida Grande", "Trebuchet MS", Verdana, sans-serif;
         line-height:38px;
         padding: 0;
         margin: 0;
@@ -17,7 +18,10 @@
         top: 0px;
         display: block;
         overflow: hidden;
-        background: #0D2833;
+        background: #0F6662;
+        background: -webkit-gradient(linear, right bottom, left top, from(#0f6662), to(#408569));
+        background: -moz-linear-gradient(left top 315deg, #0f6662, #408569);
+        background: linear-gradient(bottom, #0f6662, #408569);
       }
  
       .slides {
@@ -42,31 +46,24 @@
         left: 50%;
         top: 50%;
         margin-top: -350px;
-        background-color: #eee;
-        background: -webkit-gradient(linear, left bottom, left top, from(#D4E9CF), to(#fff));
-        background: -moz-linear-gradient(bottom, #D4E9CF, #fff);
-        background: linear-gradient(bottom, #D4E9CF, #fff);
+        background-color: #75758B;
+        background: -webkit-gradient(linear, right bottom, left top, from(#75758B), to(#fff));
+        background: -moz-linear-gradient(left top 315deg, #75758B, #fff);
+        background: linear-gradient(bottom, #75758B, #fff);
         -webkit-transition: margin 0.25s ease-in-out;
         -moz-transition: margin 0.25s ease-in-out;
         -o-transition: margin 0.25s ease-in-out;
+	box-shadow: rgba(0, 0, 0, 0.8) 0 0 10px;
+    -webkit-box-shadow: rgba(0, 0, 0, 0.8) 0 0 10px;
+    -moz-box-shadow: rgba(0, 0, 0, 0.8) 0 0 10px;
+    -o-box-shadow: rgba(0, 0, 0, 0.8) 0 0 10px;	
         transition: margin 0.25s ease-in-out;
+        -moz-border-radius: 10px;
+        -khtml-border-radius: 10px;
+        border-radius: 10px; /* includes Opera 10.5+ */
+        -webkit-border-radius: 10px;
       }
  
-      .slide:nth-child(even) {
-        -moz-border-radius: 20px 0;
-        -khtml-border-radius: 20px 0;
-        border-radius: 20px 0; /* includes Opera 10.5+ */
-        -webkit-border-top-left-radius: 20px;
-        -webkit-border-bottom-right-radius: 20px;
-      }
- 
-      .slide:nth-child(odd) {
-        -moz-border-radius: 0 20px;
-        -khtml-border-radius: 0 20px;
-        border-radius: 0 20px;
-        -webkit-border-top-right-radius: 20px;
-        -webkit-border-bottom-left-radius: 20px;
-      }
  
       .slide p, .slide textarea {
         font-size: 26px;
@@ -171,7 +168,7 @@
         margin-top: 0;
       }
       section, footer {
-        color: #222222;
+        color: #27283B;
         text-shadow: rgba(0, 0, 0, 0.2) 0 2px 5px;
         margin: 100px 0 0;
         display: block;
@@ -191,8 +188,8 @@
         display: inline-block;
         text-decoration: none;
         line-height: 110%;
-        border-bottom: 2px solid #2b55ac;
-        color:#2b55ac;
+        border-bottom: 2px solid #FF5F34;
+        color:#FF5F34;
       }
  
       a:hover {
@@ -519,14 +516,21 @@
       .landing h1 {
 	font-size:72px;
       }
+      h1,h2  { 
+        letter-spacing:.5px;
+        color:#4d0000;
+        font-family:"ChunkFiveRegular";
+    }
+
+    h2 {
+      font-size:28px;
+    }
       h1 {
 	display:block;
 	margin-top:20px;
-        font-size:60px;
-        font-family:"Sketchetik";
+        font-size:48px;
         font-weight:bold;
-        color:#222222;
-		line-height:70px;
+		line-height:56px;
         /*text-shadow:1px 1px 0 #EEEEEE;*/
       }
       h1.middleGuy {
@@ -571,13 +575,13 @@
     -webkit-border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
     border-top-left-radius: 10px;
-    border:3px solid #222222;
-    background-color:#F2EFC1;
+    border:3px solid #4D0000;
+    background-color:#27283B;
+    color:#fff;
     border-right:none;
 	padding:30px;
 	font-size:46px !important;
 	line-height:66px;
-    font-family: "Helvetica", "Verdana";
 }
 .codagraph {
 	padding:20px;

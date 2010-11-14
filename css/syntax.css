@@ -38,7 +38,7 @@
 
 .syntaxhighlighter
 {
-	background-color: #0D1021 !important;
+	background-color: #27273b !important;
 }
 
 /* Gutter line numbers */
@@ -63,19 +63,19 @@
 /* First line */
 .syntaxhighlighter .line.alt1
 {
-	background-color: #0D1021 !important;
+	background-color: #27273b !important;
 }
 
 /* Second line */
 .syntaxhighlighter .line.alt2
 {
-	background-color: #0D1021 !important;
+	background-color: #27273b !important;
 }
 
 /* Highlighed line number */
 .syntaxhighlighter .line.highlighted .number
 {
-	background-color: #a4bae8 !important;
+	background-color: #ff5f34 !important;
 	color: #FBDE2D !important;
 }
 
@@ -83,12 +83,12 @@
 .syntaxhighlighter .line.highlighted.alt1,
 .syntaxhighlighter .line.highlighted.alt2
 {
-	background-color: #a4bae8 !important;
+	background-color: #ff5f34 !important;
 }
 
 .syntaxhighlighter .toolbar
 {
-	background-color: #0D1021 !important;
+	background-color: #27273b !important;
 }
 
 .syntaxhighlighter .toolbar a
