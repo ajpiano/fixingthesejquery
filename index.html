@@ -848,83 +848,8 @@ $("#foo").click(function(e) {
         </div>
 
 
-        <div class="slide random-caveats"> 
-          <header> 
-            <h1>RANDOM CAVEATS</h1> 
-            <section> 
-              <p class="quoteThing">
-              Non-AJAX Edition*
-              </p> 
-              <p>* Guess what's coming up next!</p>
-            </section> 
-          </header> 
-        </div> 
 
-	<div class="slide random-caveats"> 
-          <header> 
-            <h1>IE will straight up kill you if...</h1> 
-          </header> 
-          <section class="text muchSmallerCode"> 
-            <ul style="line-height:24px;">
-              <li>You leave a trailing comma in an object literal</li>
-              <li>
-                <pre class="brush: js; toolbar: false;">
-var get = {
-  ready: "for",
-  your: "funeral",
-}; // BOOM
-</pre> 
-              </li>
-              <li>You use <a href="https://developer.mozilla.org/en/JavaScript/Reference/Reserved_Words">reserved words you didn't know were reserved</a></li>
-              <li>
-                <pre class="brush: js; toolbar: false;">
-var class = "boom"; // BOOM
-var foo = {class: "bar"}; // BOOM
-var foo = {"class": "bar"}; // Actually OK. Quoted keynames ftw!
-</pre> 
-              </li>
-              <li>You try to inject malformed HTML</li>
-              <li>
-                <pre class="brush: js; toolbar: false;">
-$("#pick-a-nick-basket")
-.append(&quot;&lt;div class='food'&gt;&lt;h1&gt;Roast Beef&lt;/a&gt;&lt;/div&gt;&lt;a href='http://www.roastbeef.info'&gt;&lt;/h1&gt;&quot;); //sputter
-</pre> 
-              </li>
-            </ul>
-          </section>
-        </div>
-
-
-<div class="slide random-caveats"> 
-          <header> 
-            <h1>event.stopPropagation()</h1> 
-            <h2><em>"It stops events from propagating!"</em></h2>
-          </header> 
-          <section class="text muchSmallerCode" style="margin-top:163px;line-height:20px;"> 
-            <ul>
-              <li>Sometimes, you attach a handler to an element, and it works great.</li>
-              <li>
-                <pre class="brush: js; toolbar: false;">
-$("form").focus(function(e) {
- $(e.target).addClass("active").siblings(":input").removeClass("active");
-});
-</pre> 
-              </li>
-              <li>Then you add some cool plugin, and the first handler. Stops. Happening.</li>
-              <li>
-                <pre class="brush: js; toolbar: false;">
-// jQuery.fn.electricPiano is a fictional plugin that
-// turns an input into a keyboard that plays synthesized sounds.
-$("input.musical").electricPiano();
-</pre>      
-              </li>
-              <li>That fancy plugin (or your own code) may be stopping the event's bubbling.</li>
-              <li>Check to see if there are other handlers which call <code>event.stopPropagation()</code> or <code>return false;</code></li>
-            </ul>
-          </section>
-        </div>
-
-        <div class="slide"> 
+        <div class="slide interstitial"> 
           <header> 
             <h1>Debugging AJAX</h1> 
             </header>
@@ -1322,7 +1247,142 @@ var newContent = getContent(); // newContent === undefined
           </section>
         </div>
 
+        <div class="slide interstitial"> 
+          <header> 
+            <h1>Random Caveats</h1> 
+          </header> 
+          <section class="text">
+            <figure>
+              <img src="images/random_caveats.png" height="425">
+              <figcaption>
+                  <a href="http://www.flickr.com/photos/druclimb/325661568/">http://www.flickr.com/photos/druclimb/325661568/</a>
+              </figcaption>
+            </figure>
+          </section>
+        </div>
 
+	<div class="slide random-caveats"> 
+          <header> 
+            <h1>IE will straight up kill you if...</h1> 
+          </header> 
+          <section class="text muchSmallerCode"> 
+            <ul style="line-height:24px;">
+              <li>You leave a trailing comma in an object literal</li>
+              <li>
+                <pre class="brush: js; toolbar: false;">
+var get = {
+  ready: "for",
+  your: "funeral",
+}; // BOOM
+</pre> 
+              </li>
+              <li>You use <a href="https://developer.mozilla.org/en/JavaScript/Reference/Reserved_Words">reserved words you didn't know were reserved</a></li>
+              <li>
+                <pre class="brush: js; toolbar: false;">
+var class = "boom"; // BOOM
+var foo = {class: "bar"}; // BOOM
+var foo = {"class": "bar"}; // Actually OK. Quoted keynames ftw!
+</pre> 
+              </li>
+              <li>You try to inject malformed HTML</li>
+              <li>
+                <pre class="brush: js; toolbar: false;">
+$("#pick-a-nick-basket")
+.append(&quot;&lt;div class='food'&gt;&lt;h1&gt;Roast Beef&lt;/a&gt;&lt;/div&gt;&lt;a href='http://www.roastbeef.info'&gt;&lt;/h1&gt;&quot;); //sputter
+</pre> 
+              </li>
+            </ul>
+          </section>
+        </div>
+
+
+        <div class="slide random-caveats"> 
+          <header> 
+            <h1>event.stopPropagation()</h1> 
+            <h2><em>"It stops events from propagating!"</em></h2>
+          </header> 
+          <section class="text muchSmallerCode" style="margin-top:163px;line-height:20px;"> 
+            <ul>
+              <li>Sometimes, you attach a handler to an element, and it works great.</li>
+              <li>
+                <pre class="brush: js; toolbar: false;">
+$("form").focus(function(e) {
+ $(e.target).addClass("active").siblings(":input").removeClass("active");
+});
+</pre> 
+              </li>
+              <li>Then you add some cool plugin, and the first handler. Stops. Happening.</li>
+              <li>
+                <pre class="brush: js; toolbar: false;">
+// jQuery.fn.electricPiano is a fictional plugin that
+// turns an input into a keyboard that plays synthesized sounds.
+$("input.musical").electricPiano();
+</pre>      
+              </li>
+              <li>That fancy plugin (or your own code) may be stopping the event's bubbling.</li>
+              <li>Check to see if there are other handlers which call <code>event.stopPropagation()</code> or <code>return false;</code></li>
+            </ul>
+          </section>
+        </div>
+
+        <div class="slide random-caveats"> 
+          <header> 
+            <h1><code>for</code> pete's sake!</h1> 
+          </header> 
+          <section class="text muchSmallerCode"> 
+            <p>When you use a for loop, the iterator variable persists after the loop.</p>
+                <pre class="brush: js; toolbar: false;">
+// OMG I heard jQuery.fn.each was like a HUGE perf hit!
+// So I'm going to use a native for loop instead!
+var lis = $("li"),
+    l = lis.length, // 5
+    i = 0, li;
+for (i=0;i&lt;l;i++) {
+    li = lis.eq(i);
+    li.click(function() {
+       alert("You clicked the "+ i +"th item"); 
+       // No matter which item is clicked, it always alerts 5! 
+    });
+}
+</pre> 
+            <a href="http://jsfiddle.net/ajpiano/wq376/">http://jsfiddle.net/ajpiano/wq376/</a>
+            <p>The variable <code>i</code> is local to the function in which it's defined, <em>not the loop</em></p>
+          </section>
+        </div>
+
+        <div class="slide random-caveats"> 
+          <header> 
+            <h1>Wrapping it up</h1> 
+          </header> 
+          <section class="text muchMuchSmallerCode"> 
+            <ul>
+              <li>Use a <em><a href="http://jqfundamentals.com/book/book.html#N206B8">closure</a></em> - a new function context - to encapsulate the variable</li>
+              <li>Use a <a href="http://briancrescimanno.com/2009/09/24/how-self-executing-anonymous-functions-work/">self-executing anonymous function</a> to create a new function scope for each loop iteration</li>
+              <li>Or just use <code>jQuery.each</code> or <code>jQuery.fn.each</code></li>
+            </ul>
+                <pre class="brush: js; toolbar: false; highlight:[4,10]">
+// Make your own closure
+var lis = $("li"), l = lis.length, i = 0, li;
+for (i=0;i&lt;l;i++) {
+    (function(i) {
+        // i is now local to this SEAF (self-executing anonymous function)
+        li = lis.eq(i);
+        li.click(function() {
+           alert("You clicked the "+ i +"th item");        
+        });
+    })(i);
+}
+
+// Just use jQuery's .each, it's not actually a serious performance concern
+lis.each(function(i,elem) {
+   $(this).click(function(event) {
+    alert("jQuery's each says you clicked the "+ i +"th item");        
+  });
+});
+</pre> 
+            <a href="http://jsfiddle.net/ajpiano/uNHYM/">http://jsfiddle.net/ajpiano/uNHYM/</a>
+          </section>
+        </div>
 	<div class="slide"> 
           <header> 
             <h1>Something clever</h1> 
