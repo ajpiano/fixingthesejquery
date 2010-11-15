@@ -486,7 +486,7 @@ $('#testElement')
             <h1>Answer Your Own FAQs</h1>
             <h2>AKA: "Why isn't it working?"</h2>
           </header>
-          <section style="margin-top:163px;" class="smallerCode text">
+          <section style="margin-top:163px;" class="muchSmallerCode text">
             <dl>
               <dt><strong>Q: </strong>Why aren't my events happening?</dt>
               <dd>Do the elements you're attaching them to even exist? Type this in the console, and run it.</dd>
@@ -501,10 +501,18 @@ console.log($(".theElements").length);
               if a selector matched any elements. <em>Don't use <code>.size()</code>, it's a waste of time.</em></dd>
               <dd><strong>A: </strong>A selector you are using is not correct.</dd>
               <dd><strong>A: </strong>A traversal failed to match any elements.</dd>
-
+              <dt>Don't Quote Me On That</dt>
+              <dd>If you are referring to DOM Elements like <code>window</code> or <code>this</code>, don't treat them like strings</dd>
+              <dd>
+              <pre class="brush: js; toolbar: false">
+$('this') // Wrong
+$(this)   // Right
+</pre>
+              </dd>
               <dt><strong>Q: </strong>But the result was <code>&gt; 0</code>!</dt>
               <dd><strong>A: </strong>Then we forge on!</dd>
             </dl>
+
 	  </section>
         </div>
 
