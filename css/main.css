@@ -46,10 +46,10 @@
         left: 50%;
         top: 50%;
         margin-top: -350px;
-        background-color: #75758B;
-        background: -webkit-gradient(linear, right bottom, left top, from(#75758B), to(#fff));
-        background: -moz-linear-gradient(left top 315deg, #75758B, #fff);
-        background: linear-gradient(bottom, #75758B, #fff);
+        background-color: #9c9cb3;
+        background: -webkit-gradient(linear, right bottom, left top, from(#9c9cb3), to(#fff));
+        background: -moz-linear-gradient(left top 315deg, #9c9cb3, #fff);
+        background: linear-gradient(bottom, #9c9cb3, #fff);
         -webkit-transition: margin 0.25s ease-in-out;
         -moz-transition: margin 0.25s ease-in-out;
         -o-transition: margin 0.25s ease-in-out;
