@@ -250,7 +250,7 @@
         text-align: center;
         display: table-cell;
         vertical-align: bottom;
-        height: 650px;
+        height: 675px;
         width: 900px;
       }
       /*
@@ -516,6 +516,10 @@
       .landing h1 {
 	font-size:72px;
       }
+
+      .landing h1 span {
+        font-size:42px;
+      }
       h1,h2  { 
         letter-spacing:.5px;
         color:#4d0000;
@@ -541,7 +545,7 @@
 	position:static;
       }
       #intro .bg{
-        background-image:url(../images/baby_computer.jpg);
+        background-image:url(../images/adam_baby_computer.jpg);
         background-position:50% 50%;
         background-repeat:no-repeat;
       }
