@@ -1,65 +1,65 @@
 
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <!--
   jQuery's Best Friends
   by Alex Sexton
   WTFPL License
- 
+
   If you want the cool kid fonts for this preso:
   http://new.myfonts.com/fonts/hiekkagraphics/sketchetik/
   http://www.microsoft.com/downloads/en/details.aspx?familyid=22e69ae4-7e40-4807-8a86-b3d36fab68d3&displaylang=en
- 
+
   They aren't licensed for webfonting, so sry.
- 
+
   This all refers to the Presentation slides or whatever.
   vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
- 
+
   Copyright 2010 Google Inc.
- 
+
   Licensed under the Apache License, Version 2.0 (the "License");
   you may not use this file except in compliance with the License.
   You may obtain a copy of the License at
- 
+
      http://www.apache.org/licenses/LICENSE-2.0
- 
+
   Unless required by applicable law or agreed to in writing, software
   distributed under the License is distributed on an "AS IS" BASIS,
   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
   See the License for the specific language governing permissions and
   limitations under the License.
- 
+
   Original slides: Marcin Wichary (mwichary@google.com)
   Modifications: Ernest Delgado (ernestd@google.com)
                  Alex Russell (slightlyoff@chromium.org)
                  Brad Neuberg
---> 
-<html> 
-  <head> 
-    <meta charset="utf-8" /> 
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge;chrome=1" /> 
+-->
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge;chrome=1" />
     <title>Fixing These jQuery | adam j. sontag  </title>
-    <link href="css/fonts.css" rel="stylesheet" type="text/css" /> 
-    <link href="css/main.css" rel="stylesheet" type="text/css" /> 
-    <link href="css/syntax.css" rel="stylesheet" type="text/css" /> 
-  </head> 
-  <body> 
-    <div class="presentation"> 
-      <div id="presentation-counter"></div> 
-      <div class="slides"> 
-        <div class="slide"> 
-          <div class="cpbg"> 
-            <section class="middle landing"> 
+    <link href="css/fonts.css" rel="stylesheet" type="text/css" />
+    <link href="css/main.css" rel="stylesheet" type="text/css" />
+    <link href="css/syntax.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div class="presentation">
+      <div id="presentation-counter"></div>
+      <div class="slides">
+        <div class="slide">
+          <div class="cpbg">
+            <section class="middle landing">
               <h1>Fixing These jQuery!</h1>
               <h4>adam j. sontag</h4>
-            </section> 
-          </div> 
-        </div> 
+            </section>
+          </div>
+        </div>
 	
 	
 		
 	
-        <div class="slide"> 
-          <header> 
+        <div class="slide">
+          <header>
             <h1>Who dat?</h1>
           </header>
           <section class="text">
@@ -71,38 +71,38 @@
               <li>I've seen <del>it all</del> a lot</li>
             </ul>
           </section>
-        </div> 
+        </div>
 	
 		
 	
-        <div class="slide"> 
+        <div class="slide">
           <header>
             <h1>jQuery is JavaScript</h1>
           </header>
           <section class="text">
             <p>You <strong>will</strong> have to debug it.</p>
-	    <pre class="brush: js; toolbar: false"> 
-window.alert("Is Not A Debugger")</pre> 
+	    <pre class="brush: js; toolbar: false">
+window.alert("Is Not A Debugger")</pre>
             <p>Why?</p>
             <iframe src="dontdothis.html" style='width:100%;height800px;' height='300'>Check Out My Awesome, Hand-Rolled Tooltip!</iframe>
-	  </section> 
-        </div> 
- 
+	  </section>
+        </div>
 
-	<div class="slide"> 
-          <header> 
-            <h1>JavaScript Debuggers Exist</h1> 
-            <section> 
-              <p class="quoteThing">And if you aren't using them, you are insane.</p> 
-            </section> 
-          </header> 
-        </div> 
+
+	<div class="slide">
+          <header>
+            <h1>JavaScript Debuggers Exist</h1>
+            <section>
+              <p class="quoteThing">And if you aren't using them, you are insane.</p>
+            </section>
+          </header>
+        </div>
 
 	
-	<div class="slide" id='debugger-icons'> 
-          <header> 
-            <h1>Debuggers</h1> 
-          </header> 
+	<div class="slide" id='debugger-icons'>
+          <header>
+            <h1>Debuggers</h1>
+          </header>
           <section class="text">
             <figure>
               <img src="images/firefox.png">
@@ -157,15 +157,15 @@ window.alert("Is Not A Debugger")</pre>
               </aside>
             </figure>
 
-          </section> 
-        </div> 
+          </section>
+        </div>
 
 
 
-	<div class="slide debugger-screenshots accordioned"> 
-          <header> 
+	<div class="slide debugger-screenshots accordioned">
+          <header>
             <h1>All Look Same</h1>
-          </header> 
+          </header>
           <section class="text">
             <figure>
               <img src="images/firebug_screenshot.png">
@@ -191,14 +191,14 @@ window.alert("Is Not A Debugger")</pre>
                 Internet Explorer 8
               </figcaption>
             </figure>
-          </section> 
-        </div> 
+          </section>
+        </div>
 	
- 
-	<div class="slide debugger-screenshots"> 
-          <header> 
+
+	<div class="slide debugger-screenshots">
+          <header>
             <h1>ZOMG!</h1>
-          </header> 
+          </header>
           <section class="text">
             <figure>
               <img src="images/it_shows_errors.png" id="it_shows_errors">
@@ -213,12 +213,12 @@ window.alert("Is Not A Debugger")</pre>
           </section>
         </div>
 
-	<div class="slide"> 
-          <header> 
+	<div class="slide">
+          <header>
             <h1>Really Basic Errors</h1>
-            <h2>Let's get these out of the way</h2> 
+            <h2>Let's get these out of the way</h2>
           </header>
-          <section class="text muchSmallerCode" style="margin-top:163px"> 
+          <section class="text muchSmallerCode" style="margin-top:163px">
             <dl>
               <dt>jQuery is not defined</dt>
               <dd>You have not loaded jQuery correctly</dd>
@@ -248,9 +248,9 @@ window.alert("Is Not A Debugger")</pre>
           </header>
           <section class="text">
             <p>Instead of this ugly, useless ugly alert...</p>
-            <pre class="brush: js; toolbar: false; highlight:[6]"> 
+            <pre class="brush: js; toolbar: false; highlight:[6]">
 $("ul li span").hover(function(e) {
-  var $t = $(this), 
+  var $t = $(this),
       w = $t.width(),
       o = $t.offset();
   o.left = o.left + w;
@@ -258,15 +258,15 @@ $("ul li span").hover(function(e) {
   span.text($t.text())
   tip.offset(o).show();
 });
-            </pre> 
+            </pre>
           </section>
         </div>
 
-	<div class="slide debugger-screenshots"> 
-          <header> 
-            <h1>...Set a Breakpoint!</h1> 
-          </header> 
-          <section class="text"> 
+	<div class="slide debugger-screenshots">
+          <header>
+            <h1>...Set a Breakpoint!</h1>
+          </header>
+          <section class="text">
             <figure>
               <img src="images/set_breakpoint.png">
               <figcaption>
@@ -281,16 +281,16 @@ $("ul li span").hover(function(e) {
         </div>
 
 
- 
+
         <div class="slide">
           <header>
             <h1>The <code>debugger;</code> statement</h1>
           </header>
           <section class="text">
             <p>Don't want to wait to set a breakpoint?</p>
-            <pre class="brush: js; toolbar: false; highlight:[6]"> 
+            <pre class="brush: js; toolbar: false; highlight:[6]">
 $("ul li span").hover(function(e) {
-  var $t = $(this), 
+  var $t = $(this),
       w = $t.width(),
       o = $t.offset();
   o.left = o.left + w;
@@ -298,17 +298,17 @@ $("ul li span").hover(function(e) {
   span.text($t.text())
   tip.offset(o).show();
 });
-            </pre> 
+            </pre>
             <p>The <code>debugger;</code> statement lets you set a breakpoint programatically.
           </section>
         </div>
- 
- 
-	<div class="slide debugger-screenshots"> 
+
+
+	<div class="slide debugger-screenshots">
           <header>
             <h1>In either case</h1>
           </header>
-          <section class="text"> 
+          <section class="text">
             <figure>
               <img src="images/reach_breakpoint.png">
               <figcaption>
@@ -316,22 +316,22 @@ $("ul li span").hover(function(e) {
               </figcaption>
             </figure>
             <p>And just like a Christmas tree, you can find all sorts of awesome stuff underneath it.</p>
-	  </section> 
-        </div> 
- 
- 
- 
-	<div class="slide"> 
+	  </section>
+        </div>
+
+
+
+	<div class="slide">
           <header>
-            <h1>Watch out! We're going <em>¡Local!</em></h1> 
+            <h1>Watch out! We're going <em>¡Local!</em></h1>
             <h2>The Watch/Locals windows</h2>
           </header>
-          <section class="text" style="margin-top:163px"> 
+          <section class="text" style="margin-top:163px">
             <figure>
               <img src="images/wi_locals.png" style="width:40%;">
               <img src="images/fb_watch.png" style="width:40%;">
               <figcaption>
-                Chrome/Safari's Scope Variables; Firebug's Watch window 
+                Chrome/Safari's Scope Variables; Firebug's Watch window
               </figcaption>
             </figure>
             <ul>
@@ -339,15 +339,15 @@ $("ul li span").hover(function(e) {
               <li>Drilldown through objects - no more [Object object]!</li>
               <li><strong>Watch:</strong> Keep track of arbitrary expressions</li>
             </ul>
-	  </section> 
-        </div> 
- 
- 
-        <div class="slide"> 
-          <header> 
-            <h1>R U Steppin To Me Bro?</h1> 
-          </header> 
-          <section class="text"> 
+	  </section>
+        </div>
+
+
+        <div class="slide">
+          <header>
+            <h1>R U Steppin To Me Bro?</h1>
+          </header>
+          <section class="text">
             <figure>
               <img src="images/wi_controls.png" style="width:50%;display:block;margin:1em auto 0;">
               <figcaption>
@@ -363,45 +363,45 @@ $("ul li span").hover(function(e) {
               <dd>Call the next function, pause again after it finishes. (Go to the next line of code.)</dd>
 
               <dt>Step Into</dt>
-              <dd>Calls the next function on the line, pausing execution on its first line.</dd> 
+              <dd>Calls the next function on the line, pausing execution on its first line.</dd>
 
               <dt>Step Into</dt>
-              <dd>Finish the current function call, pause on the line that invoked it.</dd> 
+              <dd>Finish the current function call, pause on the line that invoked it.</dd>
             </dl>
-	  </section> 
-        </div> 
- 
- 
-        <div class="slide"> 
-          <header> 
-            <h1><code>console.log</code> & friends</h1> 
-            <h2>Pullin' out all the stops!</h2> 
-          </header> 
-	  <section class="smallerCode text" style="margin-top:163px;"> 
+	  </section>
+        </div>
+
+
+        <div class="slide">
+          <header>
+            <h1><code>console.log</code> & friends</h1>
+            <h2>Pullin' out all the stops!</h2>
+          </header>
+	  <section class="smallerCode text" style="margin-top:163px;">
             <ul>
               <li>Breakpoints are great, but are similar to alerts. How?</li>
               <li>Wait for something to happen, and pause when it does</li>
               <li>The Console and its API let you debug arbitrary code and values</li>
             </ul>
-            <pre class="brush: js; toolbar: false"> 
+            <pre class="brush: js; toolbar: false">
 $('#testElement')
 .click({"foo":"bar"},function(e) {
   console.info("The button has been pressed");
   console.log(this,e);
   console.dir(e.data);
   $(this).append('<div>Hello</div>');
-}); </pre> 
-          </section> 
-        </div> 
- 
-        <div class="slide"> 
-          <header class="punny-picture"> 
+}); </pre>
+          </section>
+        </div>
+
+        <div class="slide">
+          <header class="punny-picture">
             <h1>Console loggin'</h1>
             <a href="http://www.flickr.com/photos/69393358@N00/1260688402/">
               <img src="images/console_loggin.jpg">
             </a>
-          </header> 
-	  <section class="text" style="margin-top:133px;"> 
+          </header>
+	  <section class="text" style="margin-top:133px;">
             <figure>
               <img src="images/console_demo.png">
               <figcaption>
@@ -414,34 +414,34 @@ $('#testElement')
                 The previous example, in action on <a href="http://jsfiddle.net/ajpiano/VDVzQ/">jsFiddle</a> (more on that later).
               </figcaption>
             </figure>
-	  </section> 
-        </div> 
- 
-        <div class="slide"> 
-          <header> 
+	  </section>
+        </div>
+
+        <div class="slide">
+          <header>
             <h1>The <em>Consolation</em> Prize</h1>
-          </header> 
-	  <section class="smallerCode text"> 
-          <p>You don't have to modify your code at all to debug using the Console</p> 
+          </header>
+	  <section class="smallerCode text">
+          <p>You don't have to modify your code at all to debug using the Console</p>
           <figure>
             <img src="images/consolation_prize.png" style="width:100%">
             <figcaption>
               <ul>
                 <li>You can execute any arbitrary code just by entering it into the console.</li>
-                <li><em>Code is executed in the context of the <code>window</code> object</em> (<code>this === window</code>)</li> 
+                <li><em>Code is executed in the context of the <code>window</code> object</em> (<code>this === window</code>)</li>
                 <li><em>Unless the debugger is paused, in which case code is executed in the context of the paused function</em></li>
                 <li><strong>Embiggen your console (if possible)</strong></li>
               </ul>
             </figcaption>
           </figure>
-        </div> 
+        </div>
 
 
-        <div class="slide"> 
-          <header> 
-            <h1>A Whole Lotta API</h1> 
-          </header> 
-	  <section class="text"> 
+        <div class="slide">
+          <header>
+            <h1>A Whole Lotta API</h1>
+          </header>
+	  <section class="text">
             <figure class="floaty-figure">
               <img src="images/console_api.png">
               <figcaption>
@@ -454,15 +454,15 @@ $('#testElement')
               <li>Unfortunately, most of these suck in IE</li>
               <li>Our arsenal is almost complete!</li>
             </ul>
-	  </section> 
-        </div> 
- 
- 
-        <div class="slide"> 
-          <header> 
-            <h1>He's On Fire!</h1> 
-          </header> 
-          <section class="text"> 
+	  </section>
+        </div>
+
+
+        <div class="slide">
+          <header>
+            <h1>He's On Fire!</h1>
+          </header>
+          <section class="text">
             The <a href="http://firequery.binaryage.com/">FireQuery</a> add-on for Firebug makes debugging jQuery <strong>even easier</strong>
             <figure>
               <img src="images/firequery_html.png" style="width:40%;">
@@ -479,24 +479,24 @@ $('#testElement')
               <li>Run <a href="http://github.com/jamespadolsey/jQuery-Lint">jQuery Lint</a></li>
               <li>If you like this, you might also like <a href="http://firerainbow.binaryage.com/">FireRainbow</a></li>
             </ul>
-	  </section> 
-        </div> 
- 
- 
-        <div class="slide"> 
-          <header> 
-            <h1>Answer Your Own FAQs</h1> 
+	  </section>
+        </div>
+
+
+        <div class="slide">
+          <header>
+            <h1>Answer Your Own FAQs</h1>
             <h2>AKA: "Why isn't it working?"</h2>
-          </header> 
-          <section style="margin-top:163px;" class="smallerCode text"> 
+          </header>
+          <section style="margin-top:163px;" class="smallerCode text">
             <dl>
               <dt><strong>Q: </strong>Why aren't my events happening?</dt>
               <dd>Do the elements you're attaching them to even exist? Type this in the console, and run it.</dd>
               <dd>
-              <pre class="brush: js; toolbar: false"> 
+              <pre class="brush: js; toolbar: false">
 // Replace ".theElements" with your actual selector
 console.log($(".theElements").length);
-</pre> 
+</pre>
               </dd>
               <dd>If the result is <code>0</code>, <strong>the elements are not in the DOM</strong></dd>
               <dd> Checking the <code>length</code> property of jQuery object is the <strong>easiest & fastest</strong> way to check
@@ -507,14 +507,14 @@ console.log($(".theElements").length);
               <dt><strong>Q: </strong>But the result was <code>&gt; 0</code>!</dt>
               <dd><strong>A: </strong>Then we forge on!</dd>
             </dl>
-	  </section> 
+	  </section>
         </div>
-        
-        <div class="slide"> 
-          <header> 
-            <h1>"The selection contains elements!"</h1> 
-          </header> 
-          <section class="smallerCode text"> 
+
+        <div class="slide">
+          <header>
+            <h1>"The selection contains elements!"</h1>
+          </header>
+          <section class="smallerCode text">
             <p>By and large, jQuery works with elements that are in the DOM.</p>
             <dl style="line-height:24px">
               <dt><strong>Q: </strong>Were the the elements there when the code was actually run?</dt>
@@ -527,13 +527,13 @@ console.log($(".theElements").length);
               <dd>Add <code>$("yourSelector").length</code> as a Watch Expression, wait for the breakpoint.</dd>
               <dd>Place <code>console.log($("yourSelector").length)</code> in your script, right before the code executes.</dd>
             </dl>
-	  </section> 
+	  </section>
         </div>
-        
-        <div class="slide"> 
-          <header> 
-            <h1>Log Freely!</h1> 
-            <section> 
+
+        <div class="slide">
+          <header>
+            <h1>Log Freely!</h1>
+            <section>
               <p class="quoteThing">
               Don't just log <code>.length</code>!<br/>
               You can log any type of variable.<br/>
@@ -541,23 +541,23 @@ console.log($(".theElements").length);
               If you log the entire jQuery object,
               you can hover over the elements, if any, to see them highlighted in the page!*
               </span>
-              </p> 
+              </p>
               <p>* IE doesn't support any of this awesome stuff.<br/>In fact, you can't interact with the page at all when you've paused execution in IE.</p>
-            </section> 
-          </header> 
-        </div> 
- 
- 
-        <div class="slide"> 
-          <header> 
-            <h1 style="font-size:44%">I Added The Elements to Page After I Tried To Actually Use Them</h1> 
-          </header> 
-          <section class="text smallerCode"> 
+            </section>
+          </header>
+        </div>
+
+
+        <div class="slide">
+          <header>
+            <h1 style="font-size:44%">I Added The Elements to Page After I Tried To Actually Use Them</h1>
+          </header>
+          <section class="text smallerCode">
             <ul>
               <li>One of the most <a href="http://docs.jquery.com/FAQ#Why_do_my_events_stop_working_after_an_AJAX_request.3F">FA of all Q's</a></li>
               <li>Could be as simple as <code>.html()</code> or the result of inserting AJAX-fetched content.</li>
               <li>
-              <pre class="brush: js; toolbar: false"> 
+              <pre class="brush: js; toolbar: false">
   var foo = $("div.foo").click(function() {
     $(this).text("I was clicked!");
   });
@@ -566,25 +566,25 @@ console.log($(".theElements").length);
   // nothing will happen when these divs are clicked.
   $("&lt;div&gt;",{"class","foo"}).appendTo(document.body);
   $("div.bar").addClass("foo");
-  </pre> 
+  </pre>
               </li>
               <li>Handlers bound with <code>.bind()</code> (and shortcuts) are only <strong>attached</strong> to elements that
               are in the jQuery object when <code>.bind()</code> is executed.</li>
             </ul>
-	  </section> 
-        </div> 
+	  </section>
+        </div>
 
-        <div class="slide"> 
-          <header> 
-            <h1>Hence, <code>.live()</code> and <code>.delegate</code></h1> 
-          </header> 
-          <section class="text muchSmallerCode"> 
+        <div class="slide">
+          <header>
+            <h1>Hence, <code>.live()</code> and <code>.delegate</code></h1>
+          </header>
+          <section class="text muchSmallerCode">
           <ul>
             <li><strong>Event delegation</strong> uses <a href="http://www.quirksmode.org/js/events_order.html">event bubbling</a> to catch events at a higher level in the DOM than
             where they occurred.</li>
             <li>Now, you can catch events that happen on newly added elements</li>
           </ul>
-          <pre class="brush: js; toolbar: false"> 
+          <pre class="brush: js; toolbar: false">
 // All three examples will catch a click on any anchor that is ever in the page
 $(document).bind("click",function(e) {
   if ($(e.target).is("a") {
@@ -599,9 +599,9 @@ $(document).delegate("a","click",function(e) {
 $("a").live("click",function(e) {
   //this === clicked anchor
 });
-</pre> 
-	  </section> 
-        </div> 
+</pre>
+	  </section>
+        </div>
 
 
 
@@ -614,25 +614,25 @@ $("a").live("click",function(e) {
             <pre class="brush: html; toolbar: false;">
 &lt;div id=&quot;teddy&quot; class=&quot;foo&quot;&gt;
 &lt;div id=&quot;roosevelt&quot; class=&quot;bar&quot;&gt;
-</pre> 
+</pre>
             <pre class="brush: js; toolbar: false;">
 var log = function() { console.log(this.id); }
 $(".foo").click(log);
 $(".bar").live("click",log);
 
-$(".foo").addClass("bar").removeClass("foo").trigger("click"); 
+$(".foo").addClass("bar").removeClass("foo").trigger("click");
 // logs 'teddy' twice
 // 1) Because there is still a click handler attached to &lt;div id='teddy'&gt;&lt;/div&gt;
 //    even though it no longer has the class 'foo'
 // 2) Because a "click" on an element with class "bar" bubbled to the document
-</pre> 
+</pre>
             <ul>
               <li><code>.bind()</code> creates a 1:1 association between element and handler</li>
               <li><code>.live()</code> and <code>.delegate()</code> check to see if the target element of a bubbled event matches certain criteria</li>
             </ul>
           </section>
         </div>
- 
+
         <div class="slide">
           <header>
             <h1>jQuery Objects are <em>not</em> live</code></h1>
@@ -645,14 +645,14 @@ $(".foo").addClass("bar").removeClass("foo").trigger("click");
   <li>Hoegaarden</li>
   <li>UFO Hefeweizen</li>
 </ul>
-</pre> 
+</pre>
               <pre class="brush: js; toolbar: false;">
 var li = $("#wheatBeers li");
 // li.length == 3;
 $("&lt;li&gt;",{text:"Weihanstephaner"})
 .appendTo("#wheatBeers");
 // guess what? li.length == 3
-</pre> 
+</pre>
           </section>
         </div>
 
@@ -668,19 +668,19 @@ $("&lt;li&gt;",{text:"Weihanstephaner"})
                 <pre class="brush: js; toolbar: false;">
 $("#foo") === $("#foo"); // false
 $("#foo")[0] === $("#foo")[0] // true
-</pre> 
+</pre>
               </li>
               <li><strong>DON'T</strong> store arbitrary data on random jQuery objects! <em>Hint: Use .data()</em></li>
               <li>
                 <pre class="brush: js; toolbar: false;">
 var $myCoolWidget = $("#cycleMcParallax");
 $myCoolWidget.cycleCount = 0;
-</pre> 
+</pre>
               </li>
               <li><strong>Beware</strong> of <code>add()</code></li>
               <li>
                 <pre class="brush: js; toolbar: false;">
-var red = $(".red"), green = $(".green"); 
+var red = $(".red"), green = $(".green");
 // red.length == 5; green.length == 5;
 green.add(red);
 // green.length == 5;
@@ -688,18 +688,18 @@ green = green.add(red);
 // green.length == 10;
 
 
-</pre> 
+</pre>
               </li>
             </ul>
           </section>
         </div>
 
 
-        <div class="slide"> 
-          <header> 
-            <h1>What the hell is <code>this</code>?</h1> 
-          </header> 
-          <section class="text smallerCode"> 
+        <div class="slide">
+          <header>
+            <h1>What the hell is <code>this</code>?</h1>
+          </header>
+          <section class="text smallerCode">
             <ul style="line-height:22px">
               <li>You pass a lot of functions to various jQuery methods</li>
               <li>Event Handlers, AJAX callbacks, Utility methods, Plugin callbacks</li>
@@ -721,15 +721,15 @@ $("#foo").click(function(e) {
             <ul style="line-height:22px">
               <li><strong>Be <em>very</em> aware of this when writing object-oriented code</strong></li>
             </ul>
-	  </section> 
-        </div> 
- 
- 
-	<div class="slide"> 
-          <header> 
-            <h1><code>this</code> is out of control!</h1> 
+	  </section>
+        </div>
+
+
+	<div class="slide">
+          <header>
+            <h1><code>this</code> is out of control!</h1>
           </header>
-          <section class="text muchSmallerCode"> 
+          <section class="text muchSmallerCode">
             <dl>
               <dt>Event handlers, <code>jQuery.fn.each</code>, jQuery UI</dt>
               <dd>Explicitly set <code>this</code> to be a DOM element</dd>
@@ -755,17 +755,17 @@ $.each(["foo","bar"],function(i,value) {
             <dt>Random Plugins With Callbacks</dt>
             <dd>Might set <code>this</code>, might not.  Be on the lookout.</dd>
           </dl>
-          </section> 
-        </div> 
+          </section>
+        </div>
 
 
-	<div class="slide"> 
-          <header> 
-            <h1>Don't drop the scope</h1> 
-          </header> 
-            <section class="text"> 
+	<div class="slide">
+          <header>
+            <h1>Don't drop the scope</h1>
+          </header>
+            <section class="text">
             <p>
-              If <strong><code>this</code> isn't the <code>this</code> you think <code>this</code> is</strong>, 
+              If <strong><code>this</code> isn't the <code>this</code> you think <code>this</code> is</strong>,
               you can use the debugger and/or the console to confirm your suspicion.
             </p>
             <figure>
@@ -777,11 +777,11 @@ $.each(["foo","bar"],function(i,value) {
           </section>
         </div>
 
-	<div class="slide"> 
-          <header> 
-            <h1>Let's get <code>this</code> straight</h1> 
-          </header> 
-          <section class="text muchSmallerCode"> 
+	<div class="slide">
+          <header>
+            <h1>Let's get <code>this</code> straight</h1>
+          </header>
+          <section class="text muchSmallerCode">
             <dl>
               <dt>Use a variable to alias <code>this</code></dd>
               <dd>
@@ -814,12 +814,12 @@ var person = {
           </section>
         </div>
 
-        <div class="slide"> 
-          <header> 
-            <h1><code>this</code> shall not pass!</h1> 
+        <div class="slide">
+          <header>
+            <h1><code>this</code> shall not pass!</h1>
             <h2><em>Referencing</em> vs. <em>executing</em> a function</h2>
-          </header> 
-          <section class="text muchMuchSmallerCode" style="margin-top:173px"> 
+          </header>
+          <section class="text muchMuchSmallerCode" style="margin-top:173px">
             <pre class="brush: js; toolbar: false;">
 // A simple function
 function log(str) {
@@ -829,17 +829,17 @@ function log(str) {
 // Logs an event object, because jQuery always passes the event object as the first argument to handlers
 $("#foo").click(log);
 </pre>
-            <p>You <strong>cannot</strong> override supplied function arguments by "passing arguments" to a named function: 
+            <p>You <strong>cannot</strong> override supplied function arguments by "passing arguments" to a named function:
             <em>You'll end up executing the function!</em></p>
             <pre class="brush: js; toolbar: false;">
-// WRONG 
+// WRONG
 $("#foo").click(log("I clicked it"));
 // You just executed 'log', and failed to pass a function as a handler. Huh?
 // It's the same as doing the following, and just as broken.
 var l = log("I clicked it"); // l === undefined
 $("#foo").click(l);
 
-// RIGHT 
+// RIGHT
 $("#foo").click(function(e) {
   log("I clicked it");
 });
@@ -849,9 +849,9 @@ $("#foo").click(function(e) {
 
 
 
-        <div class="slide interstitial"> 
-          <header> 
-            <h1>Debugging AJAX</h1> 
+        <div class="slide interstitial">
+          <header>
+            <h1>Debugging AJAX</h1>
             </header>
           <section class="text">
             <figure>
@@ -863,19 +863,19 @@ $("#foo").click(function(e) {
           </section>
         </div>
 
-        <div class="slide"> 
-          <header> 
-            <h1>Question #1</h1> 
+        <div class="slide">
+          <header>
+            <h1>Question #1</h1>
             <section>
               <p class="quoteThing">
                 Was there an actual request?
             </section>
-          </header> 
+          </header>
         </div>
 
-        <div class="slide debugger-screenshots"> 
-          <header> 
-            <h1>The Network/Resources Tab</h1> 
+        <div class="slide debugger-screenshots">
+          <header>
+            <h1>The Network/Resources Tab</h1>
           </header>
           <section class="text">
             <p>Investigate the existence and results of AJAX calls</p>
@@ -897,13 +897,13 @@ $("#foo").click(function(e) {
         </div>
 
 
-        <div class="slide debugger-screenshots"> 
-          <header> 
-            <h1 style="font-size:80%">Did the request even happen? IE edition</h1> 
+        <div class="slide debugger-screenshots">
+          <header>
+            <h1 style="font-size:80%">Did the request even happen? IE edition</h1>
           </header>
           <section class="text">
             <p>IE's debugging tools do not allow you to interrogate XHRs<br/>
-            You have to use a third-party HTTP Proxy tool like 
+            You have to use a third-party HTTP Proxy tool like
               <a href="http://www.charlesproxy.com/">Charles</a> or <a href="http://www.fiddler2.com/fiddler2/version.asp">Fiddler</a>
             </p>
             <figure>
@@ -916,9 +916,9 @@ $("#foo").click(function(e) {
           </section>
         </div>
 
-        <div class="slide"> 
-          <header> 
-            <h1>If You Don't See an XHR</h1> 
+        <div class="slide">
+          <header>
+            <h1>If You Don't See an XHR</h1>
           </header>
           <section class="text muchSmallerCode">
             <dl>
@@ -935,7 +935,7 @@ $.ajax({
     console.debug("The XHR object has been prepared ",xhr);
   }
 });
-</pre>      
+</pre>
               </dd>
 
               <dt>Considerably Less Likely Explanation</dt>
@@ -950,9 +950,9 @@ $.ajax({
           </section>
         </div>
 
-        <div class="slide"> 
-          <header> 
-            <h1>Haven't Had Much <code>success</code></h1> 
+        <div class="slide">
+          <header>
+            <h1>Haven't Had Much <code>success</code></h1>
           </header>
           <section class="text muchSmallerCode">
             <p>If you are able to confirm that an XHR has indeed taken place, but your success callback isn't firing:</p>
@@ -962,7 +962,7 @@ $.ajax({
               debugger to see the StatusCode and physical response from the server.</dd>
 
               <dt><strong>A2: </strong>Invalid JSON</dt>
-              <dd>If you are using <code>jQuery.getJSON</code> or otherwise specifying a <code>dataType</code> 
+              <dd>If you are using <code>jQuery.getJSON</code> or otherwise specifying a <code>dataType</code>
               of JSON, jQuery will not fire the success callback if it cannot parse the response as <em>valid</em> JSON.</dd>
               <dd><a href="http://simonwillison.net/2006/Oct/11/json/">Valid JSON</a> has <strong>double quotes</strong> around all strings, including keys, and is typically generated by a JSON encoder.</dd>
 
@@ -973,9 +973,9 @@ $.ajax({
           </section>
         </div>
 
-        <div class="slide"> 
-          <header> 
-          <h1>Not <code>this</code> again!</h1> 
+        <div class="slide">
+          <header>
+          <h1>Not <code>this</code> again!</h1>
           </header>
           <section class="text muchMuchSmallerCode">
             <p style="margin:.3em 0;">If your success callback is firing, but not working right</p>
@@ -1008,20 +1008,20 @@ var widget = {
 };
 
 widget.init().getData();
-</pre>      
+</pre>
               </dd>
             </dl>
           </section>
         </div>
 
-        <div class="slide debugger-screenshots"> 
-          <header> 
-          <h1>The A in AJAX</h1> 
+        <div class="slide debugger-screenshots">
+          <header>
+          <h1>The A in AJAX</h1>
           <h2 style="font-size:55%">Doesn't stand for "Awesome", it stands for "Asynchronous"</h2>
           </header>
           <section class="text" style="margin-top:163px">
             <figure>
-              <img src="images/ajax101.png" style="width:65%;margin:0 auto;"> 
+              <img src="images/ajax101.png" style="width:65%;margin:0 auto;">
               <figcaption>
                 Beware of <a href="http://en.wikipedia.org/wiki/Race_condition">Race Conditions</a>
               </figcaption>
@@ -1031,14 +1031,14 @@ widget.init().getData();
 
         <div class="slide">
           <header>
-            <h1>It's A Race! It's A Race!</h1> 
+            <h1>It's A Race! It's A Race!</h1>
           </header>
           <section class="text muchSmallerCode">
           <p>You cannot reliably return the result of an AJAX callback back into the function that triggered it</p>
             <figure>
               <pre class="brush: js; toolbar: false; highlight:[7,16]">
-// newcontent === XMLHttpRequest 
-// NOT the raw server response 
+// newcontent === XMLHttpRequest
+// NOT the raw server response
 var newContent = $.get("remote.php",function(data) {
   return data;
 }); </pre>
@@ -1051,7 +1051,7 @@ var newContent = $.get("remote.php",function(data) {
 var newContent;
 $.get("remote.php",function(data) {
   newContent = data;
-}); 
+});
 $("#container").html(newContent); // Nothing is appended
 </pre>
               <figcaption>
@@ -1063,7 +1063,7 @@ $("#container").html(newContent); // Nothing is appended
 
         <div class="slide">
           <header>
-            <h1><code>"Two Wrongs" != "A Right"</code></h1> 
+            <h1><code>"Two Wrongs" != "A Right"</code></h1>
           </header>
           <section class="text muchSmallerCode">
           <p>You <strong>cannot</strong> combine the previous two non-working techniques to create something that works</p>
@@ -1074,7 +1074,7 @@ function getContent() {
   var stuff;
   $.get("remote.php",function(data) {
     stuff = data;
-  }); 
+  });
   return stuff;
 }
 var newContent = getContent(); // newContent === undefined
@@ -1087,27 +1087,27 @@ var newContent = getContent(); // newContent === undefined
           </section>
         </div>
 
-        <div class="slide"> 
-          <header> 
-          <h1>Whither <code>async:false</code>?</h1> 
-            <section> 
+        <div class="slide">
+          <header>
+          <h1>Whither <code>async:false</code>?</h1>
+            <section>
             <p class="quoteThing">
               It's not like <em>killing</em> a kitten, but it <em>is</em> like locking one in a dark room and choosing not to feed it.
-            </p> 
-            </section> 
-          </header> 
+            </p>
+            </section>
+          </header>
         </div>
 
-        <div class="slide"> 
-          <header> 
-          <h1>Random SO Quote</h1> 
-            <section> 
+        <div class="slide">
+          <header>
+          <h1>Random SO Quote</h1>
+            <section>
             <p class="quoteThing" style="font-size:36px !important;line-height:48px">
             "It is much better to use callbacks and start thinking asynchronously, rather than procedurally. It's a bit of a struggle when you first start (since your code isn't necessarily run in line-by-line order), but it is very powerful and flexible once you get the hang of it."<br/>
             <a href="http://stackoverflow.com/questions/1708389/ajax-call-inside-a-each-loop-not-being-asynchronous/1708463#1708463">nickf, 10 Nov 2009</a>
-            </p> 
-            </section> 
-          </header> 
+            </p>
+            </section>
+          </header>
         </div>
 
        <div class="slide">
@@ -1116,14 +1116,14 @@ var newContent = getContent(); // newContent === undefined
           </header>
           <section class="text muchSmallerCode">
             <ul style="line-height:24px">
-              <li><a href="https://developer.mozilla.org/En/Same_origin_policy_for_JavaScript">Same Origin Policy</a></li> 
+              <li><a href="https://developer.mozilla.org/En/Same_origin_policy_for_JavaScript">Same Origin Policy</a></li>
               <li>You simply cannot make a basic AJAX request of any arbitrary resource</li>
             </ul>
             <figure>
               <pre class="brush: js; toolbar: false; ">
   $.get("http://www.google.com/search?q=javascript",function(data) {
     $("#searchResults").html(data);
-  }); 
+  });
 </pre>
               <figcaption>
               A cross-domain request. Will not work.
@@ -1131,21 +1131,21 @@ var newContent = getContent(); // newContent === undefined
             </figure>
             <p>Yes, there are workarounds:</p>
             <ul style="line-height:24px">
-                <li><a href="http://insideria.com/2009/03/what-in-the-heck-is-jsonp-and.html">JSONP</a></li> 
+                <li><a href="http://insideria.com/2009/03/what-in-the-heck-is-jsonp-and.html">JSONP</a></li>
                 <li><a href="http://www.nczonline.net/blog/2010/05/25/cross-domain-ajax-with-cross-origin-resource-sharing/">CORS</a>,</li>
                 <li><a href="http://developer.yahoo.com/yql/">YQL</a></li>
                 <li>Server-side proxy: use cURL, etc, on the server</li>
             </ul>
           </section>
           </div>
-          
+
         <div class="slide">
           <header>
-            <h1><code>&lt;script&gt;</code> tags in AJAX Content</h1> 
+            <h1><code>&lt;script&gt;</code> tags in AJAX Content</h1>
           </header>
           <section class="text muchSmallerCode">
             <ul>
-              <li>No, it's not just as good as a real callback</li> 
+              <li>No, it's not just as good as a real callback</li>
               <li>Scripts won't always be executed</li>
               <li><iframe style="width: 100%; height: 200px" src="http://jsfiddle.net/ajpiano/E78F3/embedded/"></iframe></li>
               <li>Not fun to debug</li>
@@ -1154,8 +1154,8 @@ var newContent = getContent(); // newContent === undefined
           </section>
         </div>
 
-        <div class="slide debugger-screenshots"> 
-          <header> 
+        <div class="slide debugger-screenshots">
+          <header>
             <h1>"I Found a jQuery Bug"</h1>
           </header>
           <section class="text">
@@ -1178,8 +1178,8 @@ var newContent = getContent(); // newContent === undefined
           </section>
         </div>
 
-        <div class="slide debugger-screenshots"> 
-          <header> 
+        <div class="slide debugger-screenshots">
+          <header>
             <h1>Stack Trace <a href="http://imgur.com/jacoj" target="_blank">or GTFO</a></h1>
           </header>
           <section class="text">
@@ -1196,12 +1196,12 @@ var newContent = getContent(); // newContent === undefined
           </section>
         </div>
 
-        <div class="slide debugger-screenshots"> 
-          <header> 
+        <div class="slide debugger-screenshots">
+          <header>
             <h1>Retracing your steps</h1>
           </header>
           <section class="text">
-          <p>Use the call stack to navigate the function invocation chain.</p> 
+          <p>Use the call stack to navigate the function invocation chain.</p>
             <figure>
             <img src="images/chrome_callstack.png">
               <figcaption>This doesn't look familiar...</figcaption>
@@ -1209,8 +1209,8 @@ var newContent = getContent(); // newContent === undefined
           </section>
         </div>
 
-        <div class="slide debugger-screenshots"> 
-          <header> 
+        <div class="slide debugger-screenshots">
+          <header>
             <h1>Home is where the #fail is</h1>
           </header>
           <section class="text">
@@ -1223,8 +1223,8 @@ var newContent = getContent(); // newContent === undefined
           </section>
         </div>
 
-        <div class="slide"> 
-          <header> 
+        <div class="slide">
+          <header>
           <h1>jQuery is bugging</h1>
           </header>
           <section class="text">
@@ -1247,10 +1247,10 @@ var newContent = getContent(); // newContent === undefined
           </section>
         </div>
 
-        <div class="slide interstitial"> 
-          <header> 
-            <h1>Random Caveats</h1> 
-          </header> 
+        <div class="slide interstitial">
+          <header>
+            <h1>Random Caveats</h1>
+          </header>
           <section class="text">
             <figure>
               <img src="images/random_caveats.png" height="425">
@@ -1261,11 +1261,11 @@ var newContent = getContent(); // newContent === undefined
           </section>
         </div>
 
-	<div class="slide random-caveats"> 
-          <header> 
-            <h1>IE will straight up kill you if...</h1> 
-          </header> 
-          <section class="text muchSmallerCode"> 
+	<div class="slide random-caveats">
+          <header>
+            <h1>IE will straight up kill you if...</h1>
+          </header>
+          <section class="text muchSmallerCode">
             <ul style="line-height:24px;">
               <li>You leave a trailing comma in an object literal</li>
               <li>
@@ -1274,7 +1274,7 @@ var get = {
   ready: "for",
   your: "funeral",
 }; // BOOM
-</pre> 
+</pre>
               </li>
               <li>You use <a href="https://developer.mozilla.org/en/JavaScript/Reference/Reserved_Words">reserved words you didn't know were reserved</a></li>
               <li>
@@ -1282,26 +1282,26 @@ var get = {
 var class = "boom"; // BOOM
 var foo = {class: "bar"}; // BOOM
 var foo = {"class": "bar"}; // Actually OK. Quoted keynames ftw!
-</pre> 
+</pre>
               </li>
               <li>You try to inject malformed HTML</li>
               <li>
                 <pre class="brush: js; toolbar: false;">
 $("#pick-a-nick-basket")
 .append(&quot;&lt;div class='food'&gt;&lt;h1&gt;Roast Beef&lt;/a&gt;&lt;/div&gt;&lt;a href='http://www.roastbeef.info'&gt;&lt;/h1&gt;&quot;); //sputter
-</pre> 
+</pre>
               </li>
             </ul>
           </section>
         </div>
 
 
-        <div class="slide random-caveats"> 
-          <header> 
-            <h1>event.stopPropagation()</h1> 
+        <div class="slide random-caveats">
+          <header>
+            <h1>event.stopPropagation()</h1>
             <h2><em>"It stops events from propagating!"</em></h2>
-          </header> 
-          <section class="text muchSmallerCode" style="margin-top:163px;line-height:20px;"> 
+          </header>
+          <section class="text muchSmallerCode" style="margin-top:163px;line-height:20px;">
             <ul>
               <li>Sometimes, you attach a handler to an element, and it works great.</li>
               <li>
@@ -1309,7 +1309,7 @@ $("#pick-a-nick-basket")
 $("form").focus(function(e) {
  $(e.target).addClass("active").siblings(":input").removeClass("active");
 });
-</pre> 
+</pre>
               </li>
               <li>Then you add some cool plugin, and the first handler. Stops. Happening.</li>
               <li>
@@ -1317,7 +1317,7 @@ $("form").focus(function(e) {
 // jQuery.fn.electricPiano is a fictional plugin that
 // turns an input into a keyboard that plays synthesized sounds.
 $("input.musical").electricPiano();
-</pre>      
+</pre>
               </li>
               <li>That fancy plugin (or your own code) may be stopping the event's bubbling.</li>
               <li>Check to see if there are other handlers which call <code>event.stopPropagation()</code> or <code>return false;</code></li>
@@ -1325,11 +1325,11 @@ $("input.musical").electricPiano();
           </section>
         </div>
 
-        <div class="slide random-caveats"> 
-          <header> 
-            <h1><code>for</code> pete's sake!</h1> 
-          </header> 
-          <section class="text muchSmallerCode"> 
+        <div class="slide random-caveats">
+          <header>
+            <h1><code>for</code> pete's sake!</h1>
+          </header>
+          <section class="text muchSmallerCode">
             <p>When you use a for loop, the iterator variable persists after the loop.</p>
                 <pre class="brush: js; toolbar: false;">
 // OMG I heard jQuery.fn.each was like a HUGE perf hit!
@@ -1340,21 +1340,21 @@ var lis = $("li"),
 for (i=0;i&lt;l;i++) {
     li = lis.eq(i);
     li.click(function() {
-       alert("You clicked the "+ i +"th item"); 
-       // No matter which item is clicked, it always alerts 5! 
+       alert("You clicked the "+ i +"th item");
+       // No matter which item is clicked, it always alerts 5!
     });
 }
-</pre> 
+</pre>
             <a href="http://jsfiddle.net/ajpiano/wq376/">http://jsfiddle.net/ajpiano/wq376/</a>
             <p>The variable <code>i</code> is local to the function in which it's defined, <em>not the loop</em></p>
           </section>
         </div>
 
-        <div class="slide random-caveats"> 
-          <header> 
-            <h1>Wrapping it up</h1> 
-          </header> 
-          <section class="text muchMuchSmallerCode"> 
+        <div class="slide random-caveats">
+          <header>
+            <h1>Wrapping it up</h1>
+          </header>
+          <section class="text muchMuchSmallerCode">
             <ul>
               <li>Use a <em><a href="http://jqfundamentals.com/book/book.html#N206B8">closure</a></em> - a new function context - to encapsulate the variable</li>
               <li>Use a <a href="http://briancrescimanno.com/2009/09/24/how-self-executing-anonymous-functions-work/">self-executing anonymous function</a> to create a new function scope for each loop iteration</li>
@@ -1368,7 +1368,7 @@ for (i=0;i&lt;l;i++) {
         // i is now local to this SEAF (self-executing anonymous function)
         li = lis.eq(i);
         li.click(function() {
-           alert("You clicked the "+ i +"th item");        
+           alert("You clicked the "+ i +"th item");
         });
     })(i);
 }
@@ -1376,56 +1376,56 @@ for (i=0;i&lt;l;i++) {
 // Just use jQuery's .each, it's not actually a serious performance concern
 lis.each(function(i,elem) {
    $(this).click(function(event) {
-    alert("jQuery's each says you clicked the "+ i +"th item");        
+    alert("jQuery's each says you clicked the "+ i +"th item");
   });
 });
-</pre> 
+</pre>
             <a href="http://jsfiddle.net/ajpiano/uNHYM/">http://jsfiddle.net/ajpiano/uNHYM/</a>
           </section>
         </div>
-	<div class="slide"> 
-          <header> 
-            <h1>Something clever</h1> 
-          </header> 
-          <section class="text" style="margin-top:200px;"> 
-          <ul> 
-            <li><strong>adam j. sontag</strong></li> 
-            <li>ajpiano at ajpiano dot com</li> 
-            <li><a href="http://twitter.com/ajpiano">@ajpiano</a></li> 
-            <li><a href="http://ajpiano.com/">http://ajpiano.com</a></li> 
-            <li><a href="http://yayquery.com/">http://yayquery.com</a></li> 
-            <li>I'm ajpiano on freenode IRC (#jquery) and everywhere</li> 
-            <li><a href="http://fixingthesejquery.com.com/">Slides of this talk</a></li> 
-          </ul> 
-          </section> 
-        </div> 
+	<div class="slide">
+          <header>
+            <h1>Something clever</h1>
+          </header>
+          <section class="text" style="margin-top:200px;">
+          <ul>
+            <li><strong>adam j. sontag</strong></li>
+            <li>ajpiano at ajpiano dot com</li>
+            <li><a href="http://twitter.com/ajpiano">@ajpiano</a></li>
+            <li><a href="http://ajpiano.com/">http://ajpiano.com</a></li>
+            <li><a href="http://yayquery.com/">http://yayquery.com</a></li>
+            <li>I'm ajpiano on freenode IRC (#jquery) and everywhere</li>
+            <li><a href="http://fixingthesejquery.com.com/">Slides of this talk</a></li>
+          </ul>
+          </section>
+        </div>
 	
- 
- 
+
+
 	
-      </div> 
-      
-      <!-- slides --> 
- 
-    </div> <!-- presentation --> 
- 
-    <script> 
+      </div>
+
+      <!-- slides -->
+
+    </div> <!-- presentation -->
+
+    <script>
       (function() {
         var doc = document;
         var disableBuilds = true;
- 
+
         var ctr = 0;
         var spaces = /\s+/, a1 = [''];
- 
+
         var toArray = function(list) {
           return Array.prototype.slice.call(list || [], 0);
         };
- 
+
         var byId = function(id) {
           if (typeof id == 'string') { return doc.getElementById(id); }
           return id;
         };
- 
+
         var query = function(query, root) {
           if (!query) { return []; }
           if (typeof query != 'string') { return toArray(query); }
@@ -1433,11 +1433,11 @@ lis.each(function(i,elem) {
             root = byId(root);
             if(!root){ return []; }
           }
- 
+
           root = root || document;
           var rootIsDoc = (root.nodeType == 9);
           var doc = rootIsDoc ? root : (root.ownerDocument || document);
- 
+
           // rewrite the query to be ID rooted
           if (!rootIsDoc || ('>~+'.indexOf(query.charAt(0)) >= 0)) {
             root.id = root.id || ('qUnique' + (ctr++));
@@ -1445,10 +1445,10 @@ lis.each(function(i,elem) {
           }
           // don't choke on something like ".yada.yada >"
           if ('>~+'.indexOf(query.slice(-1)) >= 0) { query += ' *'; }
- 
+
           return toArray(doc.querySelectorAll(query));
         };
- 
+
         var strToArray = function(s) {
           if (typeof s == 'string' || s instanceof String) {
             if (s.indexOf(' ') < 0) {
@@ -1460,7 +1460,7 @@ lis.each(function(i,elem) {
           }
           return s;
         };
- 
+
         var addClass = function(node, classStr) {
           classStr = strToArray(classStr);
           var cls = ' ' + node.className + ' ';
@@ -1472,7 +1472,7 @@ lis.each(function(i,elem) {
           }
           node.className = cls.trim();
         };
- 
+
         var removeClass = function(node, classStr) {
           var cls;
           if (classStr !== undefined) {
@@ -1489,7 +1489,7 @@ lis.each(function(i,elem) {
             node.className = cls;
           }
         };
- 
+
         var toggleClass = function(node, classStr) {
           var cls = ' ' + node.className + ' ';
           if (cls.indexOf(' ' + classStr.trim() + ' ') >= 0) {
@@ -1498,20 +1498,20 @@ lis.each(function(i,elem) {
             addClass(node, classStr);
           }
         };
- 
+
         var ua = navigator.userAgent;
         var isFF = parseFloat(ua.split('Firefox/')[1]) || undefined;
         var isWK = parseFloat(ua.split('WebKit/')[1]) || undefined;
         var isOpera = parseFloat(ua.split('Opera/')[1]) || undefined;
- 
+
         var canTransition = (function() {
           var ver = parseFloat(ua.split('Version/')[1]) || undefined;
           // test to determine if this browser can handle CSS transitions.
-          var cachedCanTransition = 
+          var cachedCanTransition =
             (isWK || (isFF && isFF > 3.6 ) || (isOpera && ver >= 10.5));
           return function() { return cachedCanTransition; }
         })();
- 
+
         //
         // Slide class
         //
@@ -1526,7 +1526,7 @@ lis.each(function(i,elem) {
           this._makeCounter();
           this._makeBuildList();
         };
- 
+
         Slide.prototype = {
           _node: null,
           _count: 0,
@@ -1547,7 +1547,7 @@ lis.each(function(i,elem) {
             removeClass(this._node, this._states);
             addClass(this._node, state);
             this._currentState = state;
- 
+
             // delay first auto run. Really wish this were in CSS.
             /*
             this._runAutos();
@@ -1576,7 +1576,7 @@ lis.each(function(i,elem) {
             if (this._currentState != 'current') {
               return;
             }
-            // find the next auto, slice it out of the list, and run it 
+            // find the next auto, slice it out of the list, and run it
             var idx = -1;
             this._buildList.some(function(n, i) {
               if (n.hasAttribute('data-auto')) {
@@ -1612,7 +1612,7 @@ lis.each(function(i,elem) {
             return true;
           },
         };
- 
+
         //
         // SlideShow class
         //
@@ -1626,21 +1626,21 @@ lis.each(function(i,elem) {
           } catch (e) { /* squeltch */ }
           this.current = isNaN(this.current) ? 1 : this.current;
           var _t = this;
-          doc.addEventListener('keydown', 
+          doc.addEventListener('keydown',
               function(e) { _t.handleKeys(e); }, false);
-          doc.addEventListener('mousewheel', 
+          doc.addEventListener('mousewheel',
               function(e) { _t.handleWheel(e); }, false);
-          doc.addEventListener('DOMMouseScroll', 
+          doc.addEventListener('DOMMouseScroll',
               function(e) { _t.handleWheel(e); }, false);
-          doc.addEventListener('touchstart', 
+          doc.addEventListener('touchstart',
               function(e) { _t.handleTouchStart(e); }, false);
-          doc.addEventListener('touchend', 
+          doc.addEventListener('touchend',
               function(e) { _t.handleTouchEnd(e); }, false);
-          window.addEventListener('popstate', 
+          window.addEventListener('popstate',
               function(e) { if (e.state) { _t.go(e.state); } }, false);
-          this._update();          
+          this._update();
         };
- 
+
         SlideShow.prototype = {
           _slides: [],
           _update: function(dontPush) {
@@ -1658,7 +1658,7 @@ lis.each(function(i,elem) {
               }
             }
           },
- 
+
           current: 0,
           next: function() {
             if (!this._slides[this.current-1].buildNext()) {
@@ -1674,7 +1674,7 @@ lis.each(function(i,elem) {
             this.current = num;
             this._update(true);
           },
- 
+
           _notesOn: false,
           showNotes: function() {
             var isOn = this._notesOn = !this._notesOn;
@@ -1695,7 +1695,7 @@ lis.each(function(i,elem) {
             } else if (e.detail) {
               delta = -e.detail/3;
             }
- 
+
             if (delta > 0 ) {
               this.prev();
               return;
@@ -1706,9 +1706,9 @@ lis.each(function(i,elem) {
             }
           },
           handleKeys: function(e) {
-            
+
             if (/^(input|textarea)$/i.test(e.target.nodeName)) return;
-            
+
             switch (e.keyCode) {
               case 37: // left arrow
                 this.prev(); break;
@@ -1735,26 +1735,26 @@ lis.each(function(i,elem) {
             }
           },
         };
- 
+
         // Initialize
         var slideshow = new SlideShow(query('.slide'));
       })();
-    </script> 
- 
+    </script>
+
     <!--[if lt IE 9]>
-    <script 
+    <script
       src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">
     </script>
 		<script>CFInstall.check({ mode: "overlay" });</script>
-    <![endif]--> 
-<script src="js/jquery.js"></script> 
-    <script> 
+    <![endif]-->
+<script src="js/jquery.js"></script>
+    <script>
 /*
- 
+
  Syntax Highlighter: Dual licensed under the MIT and GPL licenses.
- 
+
  Syntax Highlighter shBrushJScript: Dual licensed under the MIT and GPL licenses.
- 
+
  Dual licensed under the MIT and GPL licenses.
 */
 (function(){function j(f,e){if(!XRegExp.isRegExp(f))throw TypeError("type RegExp expected");var a=f._xregexp;f=XRegExp(f.source,m(f)+(e||""));if(a)f._xregexp={source:a.source,captureNames:a.captureNames?a.captureNames.slice(0):null};return f}function m(f){return(f.global?"g":"")+(f.ignoreCase?"i":"")+(f.multiline?"m":"")+(f.extended?"x":"")+(f.sticky?"y":"")}function p(f,e,a,b){var c=y.length,d,h,g;w=true;try{for(;c--;){g=y[c];if(a&g.scope&&(!g.trigger||g.trigger.call(b))){g.pattern.lastIndex=e;if((h=
@@ -1801,8 +1801,8 @@ a.replace(/^\s+|\s+$/g,"").replace(/\s+/g,"|");return"\\b(?:"+a+")\\b"},forHtmlS
 css:"keyword"}];this.forHtmlScript(m.scriptScriptTags)}typeof require!="undefined"&&(SyntaxHighlighter=require("shCore").SyntaxHighlighter);j.prototype=new SyntaxHighlighter.Highlighter;j.aliases=["js","jscript","javascript"];SyntaxHighlighter.brushes.JScript=j;typeof exports!="undefined"&&(exports.Brush=j)})();
 (function(){function j(){this.regexList=[{regex:new XRegExp("(\\&lt;|<)\\!\\[[\\w\\s]*?\\[(.|\\s)*?\\]\\](\\&gt;|>)","gm"),css:"color2"},{regex:SyntaxHighlighter.regexLib.xmlComments,css:"comments"},{regex:new XRegExp("(&lt;|<)[\\s\\/\\?]*(\\w+)(?<attributes>.*?)[\\s\\/\\?]*(&gt;|>)","sg"),func:function(m){var p=SyntaxHighlighter.Match,n=m[0],r=(new XRegExp("(&lt;|<)[\\s\\/\\?]*(?<name>[:\\w-\\.]+)","xg")).exec(n),t=[];if(m.attributes!=null)for(var u,w=new XRegExp("(?<name> [\\w:\\-\\.]+)\\s*=\\s*(?<value> \".*?\"|'.*?'|\\w+)",
 "xg");(u=w.exec(n))!=null;){t.push(new p(u.name,m.index+u.index,"color1"));t.push(new p(u.value,m.index+u.index+u[0].indexOf(u.value),"string"))}r!=null&&t.push(new p(r.name,m.index+r[0].indexOf(r.name),"keyword"));return t}}]}typeof require!="undefined"&&(SyntaxHighlighter=require("shCore").SyntaxHighlighter);j.prototype=new SyntaxHighlighter.Highlighter;j.aliases=["xml","xhtml","xslt","html"];SyntaxHighlighter.brushes.Xml=j;typeof exports!="undefined"&&(exports.Brush=j)})();
-    </script> 
-    <script type='text/javascript'> 
+    </script>
+    <script type='text/javascript'>
 	(function(){
 		var corecss = document.createElement('link');
 		var themecss = document.createElement('link');
@@ -1824,13 +1824,13 @@ css:"keyword"}];this.forHtmlScript(m.scriptScriptTags)}typeof require!="undefine
         /**
         * hoverIntent r5 // 2007.03.27 // jQuery 1.1.2+
         * <http://cherne.net/brian/resources/jquery.hoverIntent.html>
-        * 
+        *
         * @param  f  onMouseOver function || An object with configuration options
         * @param  g  onMouseOut function  || Nothing (use configuration options object)
         * @author    Brian Cherne <brian@cherne.net>
         */
         (function($){$.fn.hoverIntent=function(f,g){var cfg={sensitivity:7,interval:100,timeout:0};cfg=$.extend(cfg,g?{over:f,out:g}:f);var cX,cY,pX,pY;var track=function(ev){cX=ev.pageX;cY=ev.pageY;};var compare=function(ev,ob){ob.hoverIntent_t=clearTimeout(ob.hoverIntent_t);if((Math.abs(pX-cX)+Math.abs(pY-cY))<cfg.sensitivity){$(ob).unbind("mousemove",track);ob.hoverIntent_s=1;return cfg.over.apply(ob,[ev]);}else{pX=cX;pY=cY;ob.hoverIntent_t=setTimeout(function(){compare(ev,ob);},cfg.interval);}};var delay=function(ev,ob){ob.hoverIntent_t=clearTimeout(ob.hoverIntent_t);ob.hoverIntent_s=0;return cfg.out.apply(ob,[ev]);};var handleHover=function(e){var p=(e.type=="mouseover"?e.fromElement:e.toElement)||e.relatedTarget;while(p&&p!=this){try{p=p.parentNode;}catch(e){p=this;}}if(p==this){return false;}var ev=jQuery.extend({},e);var ob=this;if(ob.hoverIntent_t){ob.hoverIntent_t=clearTimeout(ob.hoverIntent_t);}if(e.type=="mouseover"){pX=ev.pageX;pY=ev.pageY;$(ob).bind("mousemove",track);if(ob.hoverIntent_s!=1){ob.hoverIntent_t=setTimeout(function(){compare(ev,ob);},cfg.interval);}}else{$(ob).unbind("mousemove",track);if(ob.hoverIntent_s==1){ob.hoverIntent_t=setTimeout(function(){delay(ev,ob);},cfg.timeout);}}};return this.mouseover(handleHover).mouseout(handleHover);};})(jQuery);
-                
+
         $(document).ready(function() {
 
             var screenshots = $("div.accordioned figure img");
@@ -1845,20 +1845,20 @@ css:"keyword"}];this.forHtmlScript(m.scriptScriptTags)}typeof require!="undefine
             });
         });
 
-</script> 
-<script type="text/javascript"> 
- 
+</script>
+<script type="text/javascript">
+
   var _gaq = _gaq || [];
   _gaq.push(['_setAccount', 'UA-19220806-1']);
   _gaq.push(['_trackPageview']);
- 
+
   (function() {
     var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
     ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
   })();
- 
-</script> 
-    
-  </body> 
-</html> 
+
+</script>
+
+  </body>
+</html>
