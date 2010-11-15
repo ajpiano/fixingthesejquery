@@ -249,8 +249,8 @@
         line-height: 68px;
         text-align: center;
         display: table-cell;
-        vertical-align: middle;
-        height: 700px;
+        vertical-align: bottom;
+        height: 650px;
         width: 900px;
       }
       /*
@@ -540,12 +540,12 @@
       header.moreLegit {
 	position:static;
       }
-      .cpbg {
-        background-image:url(../img/cptplanet.png);
+      #intro .bg{
+        background-image:url(../images/baby_computer.jpg);
         background-position:50% 50%;
         background-repeat:no-repeat;
       }
-      .cpbg h1 {
+      #intro h1 {
 	    opacity:0.94;
         background-color:#EFEFEF;
 		padding:25px 0 20px;
@@ -554,9 +554,8 @@
         -moz-box-shadow: rgba(0, 0, 0, 0.8) 0 0 5px;
         -o-box-shadow: rgba(0, 0, 0, 0.8) 0 0 5px;
       }
-      .cpbg h4 {
-	font-family:"helvetica nueue", "helvetica", "verdana";
-        padding-left:350px;
+      #intro h4 {
+        padding-left:450px;
         line-height:25px;
         margin:10px 0;
         color:#0D2833;
