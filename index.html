@@ -1253,14 +1253,50 @@ var newContent = getContent(); // newContent === undefined
           </section>
         </div>
 
-        <div class="slide"> 
+        <div class="slide debugger-screenshots"> 
           <header> 
             <h1>Stack Trace <a href="http://imgur.com/jacoj" target="_blank">or GTFO</a></h1>
           </header>
           <section class="text">
+            <figure>
+            <img src="images/stacktrace_wtf.png">
+              <figcaption>Double handler is undefined! What does it mean?</figcaption>
+            </figure>
+            <ul>
+                <li>Click the line number to find where jQuery is "breaking"</li>
+                <li>Set a breakpoint</li>
+                <li>Execute the code again (refresh)</li>
+                <li>Click through the call stack/stack trace until you find something familiar</li>
+            </ul>
           </section>
         </div>
 
+        <div class="slide debugger-screenshots"> 
+          <header> 
+            <h1>Retracing your steps</h1>
+          </header>
+          <section class="text">
+          <p>Use the call stack to navigate the function invocation chain.</p> 
+            <figure>
+            <img src="images/chrome_callstack.png">
+              <figcaption>This doesn't look familiar...</figcaption>
+            </figure>
+          </section>
+        </div>
+
+        <div class="slide debugger-screenshots"> 
+          <header> 
+            <h1>Home is where the #fail is</h1>
+          </header>
+          <section class="text">
+            <figure>
+            <img src="images/firebug_stacktrace.png">
+              <figcaption>Hey, I wrote this code!</figcaption>
+            </figure>
+            <p> When you encounter some of your own code, debug everything you're passing into jQuery.<br/>
+            In this case, I'm passing a nonexistent method as a handler!</p>
+          </section>
+        </div>
 
         <div class="slide"> 
           <header> 
