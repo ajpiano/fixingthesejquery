@@ -205,7 +205,6 @@
       li {
         list-style: none;
         padding: 10px 0;
-        background-image:url(../img/resicon.png);
         background-position:left 50%;
         background-repeat:no-repeat;
         padding-left:40px;
@@ -517,7 +516,7 @@
 	font-size:72px;
       }
 
-      .landing h1 span {
+      .landing h1 span.subtitle {
         font-size:42px;
       }
       h1,h2  { 
@@ -684,4 +683,8 @@ figure aside {
  }
 .punny-picture a img {
   height:100px;
+}
+
+.jqueryblue {
+color:#5DB0E6 !important;
 }
