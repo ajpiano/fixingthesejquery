@@ -1403,15 +1403,15 @@ lis.each(function(i,elem) {
 var foo = true;
 if (foo) {
     function checkFoo() {
-        alert("Foo is right and good, it is true"); 
+        document.write("Foo is right and good, it is true"); 
     }  
 } else {
     function checkFoo() {
-        alert("Foo is nefarious and evil, it is false"); 
+        document.write("Foo is nefarious and evil, it is false"); 
     }      
 }
 checkFoo();
-// checkFoo() always alerts that foo is false, 
+// checkFoo() always writes that foo is false, 
 // Even though you set it true "before" defining the function!
 </pre>
           <a href="http://jsfiddle.net/ajpiano/ST5w5/">http://jsfiddle.net/ajpiano/ST5w5/</a>
@@ -1427,10 +1427,10 @@ checkFoo();
             <pre class="brush: js; toolbar: false; ">
 var foo;
 function checkFoo() {
-    alert("Foo is right and good, it is true"); 
+    document.write("Foo is right and good, it is true"); 
 }  
 function checkFoo() {
-    alert("Foo is nefarious and evil, it is false"); 
+    document.write("Foo is nefarious and evil, it is false"); 
 }      
 foo = true;
 if (foo) { } else { }
