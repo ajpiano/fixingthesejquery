@@ -1044,7 +1044,7 @@ widget.init().getData();
           <p>You cannot reliably return the result of an AJAX callback back into the function that triggered it</p>
             <figure>
               <pre class="brush: js; toolbar: false; highlight:[7,16]">
-// newcontent === XMLHttpRequest
+// newContent === XMLHttpRequest
 // NOT the raw server response
 var newContent = $.get("remote.php",function(data) {
   return data;
