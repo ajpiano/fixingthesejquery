@@ -1392,6 +1392,60 @@ lis.each(function(i,elem) {
             <a href="http://jsfiddle.net/ajpiano/uNHYM/">http://jsfiddle.net/ajpiano/uNHYM/</a>
           </section>
         </div>
+
+        <div class="slide random-caveats">
+          <header>
+            <h1>Avast! Hoist the sails!</h1>
+          </header>
+          <section class="text muchSmallerCode">
+            <p>Variable declarations and function declarations are <em>hoisted</em> to the top of the function in which they're declared.</p>
+                <pre class="brush: js; toolbar: false; ">
+var foo = true;
+if (foo) {
+    function checkFoo() {
+        alert("Foo is right and good, it is true"); 
+    }  
+} else {
+    function checkFoo() {
+        alert("Foo is nefarious and evil, it is false"); 
+    }      
+}
+checkFoo();
+// checkFoo() always alerts that foo is false, 
+// Even though you set it true "before" defining the function!
+</pre>
+          <a href="http://jsfiddle.net/ajpiano/ST5w5/">http://jsfiddle.net/ajpiano/ST5w5/</a>
+          </section>
+        </div>
+
+        <div class="slide random-caveats">
+          <header>
+            <h1>Quote <em>Before</em> Unquote</h1>
+          </header>
+          <section class="text muchSmallerCode">
+            <p>The code on the previous slide is actually interpreted like this!</p>
+            <pre class="brush: js; toolbar: false; ">
+var foo;
+function checkFoo() {
+    alert("Foo is right and good, it is true"); 
+}  
+function checkFoo() {
+    alert("Foo is nefarious and evil, it is false"); 
+}      
+foo = true;
+if (foo) { } else { }
+checkFoo();
+// Pretty crazy, amirite?
+</pre>
+          <ul>
+            <li>Limit your <code>var</code> statements, use commas to group variable declarations</li>
+            <li>This gets more complex! You'll need to read more about <a href="http://www.adequatelygood.com/2010/2/JavaScript-Scoping-and-Hoisting">hoisting</a>
+            and <a href="http://kangax.github.com/nfe/">function declarations vs. function expressions</a></li>
+            <li>Again, <strong>knowing what to watch out for is half the battle</strong>
+          </ul>
+          </section>
+        </div>
+
 	<div class="slide">
           <header>
             <h1>Something clever</h1>
