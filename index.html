@@ -1366,7 +1366,7 @@ for (i=0;i&lt;l;i++) {
           <section class="text muchMuchSmallerCode">
             <ul>
               <li>Use a <em><a href="http://jqfundamentals.com/book/book.html#N206B8">closure</a></em> - a new function context - to encapsulate the variable</li>
-              <li>Use a <a href="http://briancrescimanno.com/2009/09/24/how-self-executing-anonymous-functions-work/">self-executing anonymous function</a> to create a new function scope for each loop iteration</li>
+              <li>Use an <a href="http://benalman.com/news/2010/11/self-executing-anonymous-function/">immediately-invoked function expression</a> to create a new function scope for each loop iteration</li>
               <li>Or just use <code>jQuery.each</code> or <code>jQuery.fn.each</code></li>
             </ul>
                 <pre class="brush: js; toolbar: false; highlight:[4,10]">
@@ -1374,7 +1374,7 @@ for (i=0;i&lt;l;i++) {
 var lis = $("li"), l = lis.length, i = 0, li;
 for (i=0;i&lt;l;i++) {
     (function(i) {
-        // i is now local to this SEAF (self-executing anonymous function)
+        // i is now local to this IIFE (immediately-invoked function expression)
         li = lis.eq(i);
         li.click(function() {
            alert("You clicked the "+ i +"th item");
