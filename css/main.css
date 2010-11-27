@@ -416,10 +416,6 @@
 }
 
 
-      /*
-      .css,
-      .js,
-      .html,
       .key {
         font-family: 'Droid Sans';
         color: black;
@@ -443,7 +439,7 @@
       }
       
       .key { font-family: Arial; }
-      
+     /* 
       width:100%;
       :not(header) > .css,
       :not(header) > .js,
@@ -688,4 +684,16 @@ figure aside {
 
 .jqueryblue {
 color:#5DB0E6 !important;
+}
+
+.ui-widget {
+  font:100% "CartoGothicStdBook" !important;
+}
+
+.ui-dialog-title {
+  font-family:"ChunkFiveRegular" !important;
+}
+
+#welcome {
+  display:none;
 }
