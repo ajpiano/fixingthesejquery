@@ -693,6 +693,9 @@ color:#5DB0E6 !important;
 .ui-dialog-title {
   font-family:"ChunkFiveRegular" !important;
 }
+.ui-dialog-titlebar-close {
+  border-bottom:0;
+}
 
 #welcome {
   display:none;
