@@ -1356,8 +1356,8 @@ $("input.musical").electricPiano();
 // So I'm going to use a native for loop instead!
 var lis = $("li"),
     l = lis.length, // 5
-    i = 0, li;
-for (i=0;i&lt;l;i++) {
+    li;
+for (var i=0;i&lt;l;i++) {
     li = lis.eq(i);
     li.click(function() {
        alert("You clicked the "+ i +"th item");
