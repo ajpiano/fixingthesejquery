@@ -396,8 +396,9 @@ $("ul li span").hover(function(e) {
 $('#testElement')
 .click({"foo":"bar"},function(e) {
   console.info("The button has been pressed");
-  console.log(this,e);
   console.dir(e.data);
+  // You can pass an unlimited list of arguments
+  console.log(this,e);
   $(this).append('<div>Hello</div>');
 }); </pre>
           </section>
